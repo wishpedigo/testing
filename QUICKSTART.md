@@ -48,11 +48,11 @@ npm run dev:marketing
 ```
 Visit: http://localhost:5173
 
-**Terminal 2 - Login App:**
+**Terminal 2 - Dashboard App:**
 ```bash
-npm run dev:login
+npm run dev:dash
 ```
-Visit: http://localhost:5174
+Visit: http://dash.localhost:5173
 
 **Terminal 3 - Game App:**
 ```bash
@@ -71,7 +71,7 @@ Visit: http://localhost:5175
 ## 📁 What You Got
 
 - ✅ **Marketing App** - Beautiful landing page with MUI + Tailwind
-- ✅ **Login App** - Full authentication (signup, login, password reset)
+- ✅ **Dashboard App** - Full authentication (signup, login, password reset)
 - ✅ **Game App** - Click & score game with leaderboards
 - ✅ **Shared Components** - Reusable UI components across all apps
 - ✅ **Firebase Integration** - Auth + Database ready to go
@@ -92,7 +92,7 @@ Visit: http://localhost:5175
 ```bash
 # Start all apps (need 3 terminals)
 npm run dev:marketing
-npm run dev:login
+npm run dev:dash
 npm run dev:game
 
 # Build for production

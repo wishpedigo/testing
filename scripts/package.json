@@ -1,0 +1,16 @@
+{
+  "name": "seed-scripts",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "test-firebase": "node test-firebase.js",
+    "check-db": "node check-database.js",
+    "seed-users": "node seed-users.js",
+    "seed-all": "node seed-all.js"
+  },
+  "dependencies": {
+    "firebase": "^12.3.0",
+    "dotenv": "^16.4.5"
+  }
+}

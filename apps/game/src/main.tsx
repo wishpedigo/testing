@@ -6,6 +6,9 @@ import { theme } from '@venue/shared';
 import App from './App';
 import './index.css';
 
+// Enable dark mode
+document.documentElement.classList.add('dark');
+
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>

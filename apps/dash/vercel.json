@@ -1,19 +1,19 @@
 {
   "version": 2,
+  "name": "dash-app",
   "builds": [
     {
-      "src": "apps/marketing/package.json",
+      "src": "package.json",
       "use": "@vercel/static-build",
       "config": {
-        "distDir": "apps/marketing/dist"
+        "distDir": "dist"
       }
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "apps/marketing/$1"
+      "dest": "/$1"
     }
   ]
 }
-

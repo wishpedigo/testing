@@ -82,7 +82,7 @@ const LoginPage = () => {
         </form>
 
         <Box className="mt-4 text-center">
-          <Link to="/forgot-password" className="text-blue-600 hover:underline">
+          <Link to="/forgot-password" className="text-blue-400 hover:text-blue-300 hover:underline">
             Forgot password?
           </Link>
         </Box>
@@ -90,7 +90,7 @@ const LoginPage = () => {
         <Box className="mt-4 text-center">
           <Typography variant="body2">
             Don't have an account?{' '}
-            <Link to="/signup" className="text-blue-600 hover:underline font-semibold">
+            <Link to="/signup" className="text-blue-400 hover:text-blue-300 hover:underline font-semibold">
               Sign Up
             </Link>
           </Typography>

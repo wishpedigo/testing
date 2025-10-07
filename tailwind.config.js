@@ -5,6 +5,7 @@ export default {
     './apps/*/src/**/*.{js,ts,jsx,tsx}',
     './packages/shared/src/**/*.{js,ts,jsx,tsx}',
   ],
+  darkMode: 'class', // Enable dark mode with class strategy
   theme: {
     extend: {},
   },

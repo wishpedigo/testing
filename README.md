@@ -8,8 +8,8 @@ A modern React monorepo for a venue application with marketing page, user authen
 testing/
 ├── apps/
 │   ├── marketing/     # Public marketing website (port 5173)
-│   ├── login/         # User authentication app (port 5174)
-│   └── game/          # Single-player game app (port 5175)
+│   ├── dash/          # User dashboard & authentication app (dash.localhost:5173)
+│   └── game/          # Single-player game app (game.localhost:5173)
 ├── packages/
 │   ├── shared/        # Shared UI components, utilities, types
 │   └── firebase/      # Firebase configuration and utilities
@@ -54,8 +54,8 @@ npm install
 ```bash
 # Run all apps
 npm run dev:marketing  # Marketing site on http://localhost:5173
-npm run dev:login      # Login app on http://localhost:5174
-npm run dev:game       # Game app on http://localhost:5175
+npm run dev:dash       # Dashboard app on http://dash.localhost:5173
+npm run dev:game       # Game app on http://game.localhost:5173
 
 # Or run them individually in separate terminals
 ```
@@ -66,7 +66,7 @@ npm run dev:game       # Game app on http://localhost:5175
 
 ```bash
 npm run dev:marketing    # Marketing website
-npm run dev:login        # Authentication app
+npm run dev:dash         # Dashboard & authentication app
 npm run dev:game         # Game app
 ```
 
@@ -75,7 +75,7 @@ npm run dev:game         # Game app
 ```bash
 npm run build:all        # Build all apps
 npm run build:marketing  # Build marketing app only
-npm run build:login      # Build login app only
+npm run build:dash       # Build dashboard app only
 npm run build:game       # Build game app only
 ```
 
@@ -103,8 +103,8 @@ This project is configured for deployment on Vercel:
 
 The apps will be available at:
 - Marketing: `https://yourdomain.com`
-- Login: `https://yourdomain.com/login`
-- Game: `https://yourdomain.com/game`
+- Dashboard: `https://dash.yourdomain.com`
+- Game: `https://game.yourdomain.com`
 
 ## Shared Packages
 
