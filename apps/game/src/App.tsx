@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import { observeAuthState, getCurrentUser } from '@venue/firebase';
-import { User } from '@venue/shared';
+import { observeAuthState, getCurrentUser } from '@wishlabs/firebase';
+import { User } from '@wishlabs/shared';
 import GameScreen from './components/GameScreen';
 import LoginPrompt from './components/LoginPrompt';
 import GameNavbar from './components/GameNavbar';

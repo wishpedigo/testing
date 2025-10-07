@@ -1,5 +1,4 @@
-import { Container, Typography, Box } from '@mui/material';
-import { Card } from '@venue/shared';
+import { Container, Typography, Box, Card } from '@wishlabs/shared';
 
 const AboutPage = () => {
   return (

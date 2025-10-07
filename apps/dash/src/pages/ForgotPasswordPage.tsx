@@ -1,14 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import {
-  Container,
-  TextField,
-  Typography,
-  Box,
-  Alert,
-} from '@mui/material';
-import { Button, Card } from '@venue/shared';
-import { resetPassword } from '@venue/firebase';
+import { Container, TextField, Typography, Box, Alert, Button, Card } from '@wishlabs/shared';
+import { resetPassword } from '@wishlabs/firebase';
 
 const ForgotPasswordPage = () => {
   const [email, setEmail] = useState('');

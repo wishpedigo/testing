@@ -1,15 +1,7 @@
 import { useNavigate } from 'react-router-dom';
-import {
-  Container,
-  Typography,
-  Box,
-  AppBar,
-  Toolbar,
-  Grid,
-} from '@mui/material';
-import { Button, Card } from '@venue/shared';
-import { User } from '@venue/shared';
-import { logOut } from '@venue/firebase';
+import { Container, Typography, AppBar, Toolbar, Grid, Button, Card } from '@wishlabs/shared';
+import { User } from '@wishlabs/shared';
+import { logOut } from '@wishlabs/firebase';
 
 interface DashboardPageProps {
   user: User | null;

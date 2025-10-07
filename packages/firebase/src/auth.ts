@@ -7,7 +7,7 @@ import {
   User,
   onAuthStateChanged,
 } from 'firebase/auth';
-import { auth } from './config';
+import { getFirebaseAuth } from './config';
 
 // Sign up with email and password
 export const signUp = async (
@@ -16,7 +16,7 @@ export const signUp = async (
   displayName?: string
 ): Promise<User> => {
   const userCredential = await createUserWithEmailAndPassword(
-    auth,
+    getFirebaseAuth(),
     email,
     password
   );
@@ -32,7 +32,7 @@ export const signIn = async (
   password: string
 ): Promise<User> => {
   const userCredential = await signInWithEmailAndPassword(
-    auth,
+    getFirebaseAuth(),
     email,
     password
   );
@@ -41,23 +41,23 @@ export const signIn = async (
 
 // Sign out
 export const logOut = async (): Promise<void> => {
-  await signOut(auth);
+  await signOut(getFirebaseAuth());
 };
 
 // Reset password
 export const resetPassword = async (email: string): Promise<void> => {
-  await sendPasswordResetEmail(auth, email);
+  await sendPasswordResetEmail(getFirebaseAuth(), email);
 };
 
 // Auth state observer
 export const observeAuthState = (
   callback: (user: User | null) => void
 ): (() => void) => {
-  return onAuthStateChanged(auth, callback);
+  return onAuthStateChanged(getFirebaseAuth(), callback);
 };
 
 // Get current user
 export const getCurrentUser = (): User | null => {
-  return auth.currentUser;
+  return getFirebaseAuth().currentUser;
 };
 

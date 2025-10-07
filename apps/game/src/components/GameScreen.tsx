@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
-import { Container, Typography, Box, Grid } from '@mui/material';
-import { Button, Card } from '@venue/shared';
-import { User } from '@venue/shared';
-import { saveGameScore, getUserScores, getTopScores } from '@venue/firebase';
+import { Container, Typography, Box, Grid, Button, Card } from '@wishlabs/shared';
+import { User } from '@wishlabs/shared';
+import { saveGameScore, getUserScores, getTopScores } from '@wishlabs/firebase';
 import Game from './Game';
 
 interface GameScreenProps {

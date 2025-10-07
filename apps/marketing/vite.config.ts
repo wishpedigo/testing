@@ -5,15 +5,15 @@ import { resolve } from 'path';
 export default defineConfig({
   plugins: [react()],
   envDir: resolve(__dirname, '../..'), // Look for .env in project root
-  resolve: {
-    alias: {
-      '@venue/shared': resolve(__dirname, '../../packages/shared/src'),
-      '@venue/firebase': resolve(__dirname, '../../packages/firebase/src'),
-    },
-  },
   server: {
     port: 5173,
     host: 'localhost',
+  },
+  resolve: {
+    alias: {
+      '@wishlabs/shared': resolve(__dirname, '../../packages/shared/src'),
+      '@wishlabs/firebase': resolve(__dirname, '../../packages/firebase/src'),
+    },
   },
 });
 

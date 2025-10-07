@@ -1,5 +1,4 @@
-import { Container, Typography, Box, Grid } from '@mui/material';
-import { Button, Card } from '@venue/shared';
+import { Container, Typography, Box, Grid, Button, Card } from '@wishlabs/shared';
 
 const HomePage = () => {
   return (

@@ -1,5 +1,5 @@
-import { AppBar, Toolbar, Typography, Container } from '@mui/material';
-import { Button } from '@venue/shared';
+import { AppBar, Toolbar, Typography, Container } from '@wishlabs/shared';
+import { Button } from '@wishlabs/shared';
 import { Link } from 'react-router-dom';
 
 const Navigation = () => {

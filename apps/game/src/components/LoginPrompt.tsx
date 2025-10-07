@@ -1,5 +1,4 @@
-import { Container, Typography, Box } from '@mui/material';
-import { Button, Card } from '@venue/shared';
+import { Container, Typography, Box, Button, Card } from '@wishlabs/shared';
 
 const LoginPrompt = () => {
   return (

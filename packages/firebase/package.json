@@ -1,18 +1,28 @@
 {
-  "name": "@venue/firebase",
-  "version": "1.0.0",
-  "private": true,
+  "name": "@wishlabs/firebase",
+  "version": "1.0.2",
+  "private": false,
   "type": "module",
-  "main": "./src/index.ts",
-  "types": "./src/index.ts",
+  "main": "./dist/index.js",
+  "types": "./dist/src/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
-    "build": "tsc"
+    "build": "tsc && vite build",
+    "prepublishOnly": "npm run build"
   },
   "dependencies": {
     "firebase": "^12.3.0"
   },
   "devDependencies": {
-    "@types/node": "^20.11.19"
+    "@types/node": "^20.11.19",
+    "vite": "^5.1.0",
+    "@vitejs/plugin-react": "^4.2.1",
+    "vite-plugin-dts": "^4.3.0"
   }
 }
 

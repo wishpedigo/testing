@@ -1,23 +1,60 @@
-import { initializeApp } from 'firebase/app';
-import { getAuth } from 'firebase/auth';
-import { getFirestore } from 'firebase/firestore';
-import { getAnalytics } from 'firebase/analytics';
+import { initializeApp, FirebaseApp } from 'firebase/app';
+import { getAuth, Auth } from 'firebase/auth';
+import { getFirestore, Firestore } from 'firebase/firestore';
+import { getAnalytics, Analytics } from 'firebase/analytics';
 
-const firebaseConfig = {
-  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
-  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
-  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
-  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
-  appId: import.meta.env.VITE_FIREBASE_APP_ID,
-  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID,
-};
+export interface FirebaseConfig {
+  apiKey: string;
+  authDomain: string;
+  projectId: string;
+  storageBucket: string;
+  messagingSenderId: string;
+  appId: string;
+  measurementId?: string;
+}
 
-// Initialize Firebase
-export const app = initializeApp(firebaseConfig);
-export const auth = getAuth(app);
-export const db = getFirestore(app);
+let app: FirebaseApp | null = null;
+let auth: Auth | null = null;
+let db: Firestore | null = null;
+let analytics: Analytics | null = null;
 
-// Initialize Analytics (only in browser environment)
-export const analytics = typeof window !== 'undefined' ? getAnalytics(app) : null;
+export function initializeFirebase(config: FirebaseConfig) {
+  if (app) {
+    return { app, auth: auth!, db: db!, analytics };
+  }
+
+  app = initializeApp(config);
+  auth = getAuth(app);
+  db = getFirestore(app);
+  
+  // Initialize Analytics (only in browser environment)
+  analytics = typeof window !== 'undefined' ? getAnalytics(app) : null;
+  
+  return { app, auth, db, analytics };
+}
+
+export function getFirebaseApp(): FirebaseApp {
+  if (!app) {
+    throw new Error('Firebase not initialized. Call initializeFirebase() first.');
+  }
+  return app;
+}
+
+export function getFirebaseAuth(): Auth {
+  if (!auth) {
+    throw new Error('Firebase not initialized. Call initializeFirebase() first.');
+  }
+  return auth;
+}
+
+export function getFirebaseDb(): Firestore {
+  if (!db) {
+    throw new Error('Firebase not initialized. Call initializeFirebase() first.');
+  }
+  return db;
+}
+
+export function getFirebaseAnalytics(): Analytics | null {
+  return analytics;
+}
 

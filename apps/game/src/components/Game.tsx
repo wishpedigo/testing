@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Box, Typography } from '@mui/material';
-import { Button, Card } from '@venue/shared';
+import { Box, Typography, Button, Card } from '@wishlabs/shared';
 
 interface GameProps {
   onGameEnd: (score: number) => void;

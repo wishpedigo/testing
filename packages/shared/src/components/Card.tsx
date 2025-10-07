@@ -1,21 +1,20 @@
 import React from 'react';
-import {
-  Card as MuiCard,
-  CardContent,
-  CardProps as MuiCardProps,
-} from '@mui/material';
 
-interface CardProps extends MuiCardProps {
+interface CardProps {
   children: React.ReactNode;
+  className?: string;
+  onClick?: () => void;
 }
 
-const Card: React.FC<CardProps> = ({ children, ...props }) => {
+const Card: React.FC<CardProps> = ({ children, className = '', onClick }) => {
   return (
-    <MuiCard {...props} className="shadow-lg">
-      <CardContent>{children}</CardContent>
-    </MuiCard>
+    <div 
+      className={`bg-gray-800 border border-gray-700 rounded-lg shadow-lg p-6 ${className}`}
+      onClick={onClick}
+    >
+      {children}
+    </div>
   );
 };
 
 export default Card;
-

@@ -1,7 +1,7 @@
-import { AppBar, Toolbar, Typography, Box } from '@mui/material';
-import { Button } from '@venue/shared';
-import { User } from '@venue/shared';
-import { logOut } from '@venue/firebase';
+import { AppBar, Toolbar, Typography, Box } from '@wishlabs/shared';
+import { Button } from '@wishlabs/shared';
+import { User } from '@wishlabs/shared';
+import { logOut } from '@wishlabs/firebase';
 
 interface GameNavbarProps {
   user: User | null;

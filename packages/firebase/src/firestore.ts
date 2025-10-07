@@ -13,7 +13,7 @@ import {
   DocumentData,
   QueryConstraint,
 } from 'firebase/firestore';
-import { db } from './config';
+import { getFirebaseDb } from './config';
 
 // Generic CRUD operations
 
@@ -22,14 +22,14 @@ export const createDocument = async (
   docId: string,
   data: DocumentData
 ): Promise<void> => {
-  await setDoc(doc(db, collectionName, docId), data);
+  await setDoc(doc(getFirebaseDb(), collectionName, docId), data);
 };
 
 export const getDocument = async (
   collectionName: string,
   docId: string
 ): Promise<DocumentData | null> => {
-  const docRef = doc(db, collectionName, docId);
+  const docRef = doc(getFirebaseDb(), collectionName, docId);
   const docSnap = await getDoc(docRef);
   return docSnap.exists() ? docSnap.data() : null;
 };
@@ -39,7 +39,7 @@ export const updateDocument = async (
   docId: string,
   data: Partial<DocumentData>
 ): Promise<void> => {
-  const docRef = doc(db, collectionName, docId);
+  const docRef = doc(getFirebaseDb(), collectionName, docId);
   await updateDoc(docRef, data);
 };
 
@@ -47,14 +47,14 @@ export const deleteDocument = async (
   collectionName: string,
   docId: string
 ): Promise<void> => {
-  await deleteDoc(doc(db, collectionName, docId));
+  await deleteDoc(doc(getFirebaseDb(), collectionName, docId));
 };
 
 export const queryDocuments = async (
   collectionName: string,
   ...constraints: QueryConstraint[]
 ): Promise<DocumentData[]> => {
-  const q = query(collection(db, collectionName), ...constraints);
+  const q = query(collection(getFirebaseDb(), collectionName), ...constraints);
   const querySnapshot = await getDocs(q);
   return querySnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
 };

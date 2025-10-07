@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { observeAuthState } from '@venue/firebase';
-import { User } from '@venue/shared';
+import { observeAuthState } from '@wishlabs/firebase';
+import { User } from '@wishlabs/shared';
 import LoginPage from './pages/LoginPage';
 import SignUpPage from './pages/SignUpPage';
 import DashboardPage from './pages/DashboardPage';

@@ -1,14 +1,7 @@
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import {
-  Container,
-  TextField,
-  Typography,
-  Box,
-  Alert,
-} from '@mui/material';
-import { Button, Card } from '@venue/shared';
-import { signUp } from '@venue/firebase';
+import { Container, TextField, Typography, Box, Alert, Button, Card } from '@wishlabs/shared';
+import { signUp } from '@wishlabs/firebase';
 
 const SignUpPage = () => {
   const [email, setEmail] = useState('');

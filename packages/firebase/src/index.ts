@@ -1,5 +1,12 @@
 // Firebase configuration and utilities
-export { app, auth, db, analytics } from './config';
+export { 
+  initializeFirebase, 
+  getFirebaseApp, 
+  getFirebaseAuth, 
+  getFirebaseDb, 
+  getFirebaseAnalytics,
+  type FirebaseConfig 
+} from './config';
 export * from './auth';
 export * from './firestore';
 

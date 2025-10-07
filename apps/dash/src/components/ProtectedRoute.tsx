@@ -1,5 +1,5 @@
 import { Navigate } from 'react-router-dom';
-import { User } from '@venue/shared';
+import { User } from '@wishlabs/shared';
 
 interface ProtectedRouteProps {
   user: User | null;
