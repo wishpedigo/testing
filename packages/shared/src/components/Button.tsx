@@ -25,19 +25,19 @@ const Button: React.FC<ButtonProps> = ({
   fullWidth = false,
   sx = {}
 }) => {
-  const baseClasses = 'font-medium rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900';
+  const baseClasses = 'font-mono font-medium transition-all duration-200 focus:outline-none disabled:cursor-not-allowed relative';
   
   // Handle variant mapping (contained -> primary)
   const actualVariant = variant === 'contained' ? 'primary' : variant;
   
   const variantClasses = {
     primary: color === 'inherit' 
-      ? 'bg-transparent hover:bg-gray-700 text-white focus:ring-gray-500 disabled:bg-transparent disabled:cursor-not-allowed'
-      : 'bg-blue-600 hover:bg-blue-700 text-white focus:ring-blue-500 disabled:bg-gray-600 disabled:cursor-not-allowed',
+      ? 'bg-transparent border-4 border-sunset-orange-600 text-white hover:bg-sunset-orange-600/10 hover:shadow-glow-orange focus:shadow-glow-orange disabled:opacity-50 disabled:shadow-none'
+      : 'bg-sunset-orange-600 border-4 border-sunset-orange-600 text-white hover:bg-sunset-orange-500 hover:border-sunset-orange-400 hover:shadow-glow-orange focus:shadow-glow-orange disabled:bg-gray-600 disabled:border-gray-600 disabled:shadow-none',
     secondary: color === 'inherit'
-      ? 'bg-transparent hover:bg-gray-700 text-white focus:ring-gray-500 disabled:bg-transparent disabled:cursor-not-allowed'
-      : 'bg-pink-600 hover:bg-pink-700 text-white focus:ring-pink-500 disabled:bg-gray-700 disabled:cursor-not-allowed',
-    outline: 'border border-gray-600 text-gray-300 hover:bg-gray-700 focus:ring-gray-500 disabled:border-gray-700 disabled:text-gray-500 disabled:cursor-not-allowed'
+      ? 'bg-transparent border-4 border-sunset-red-600 text-white hover:bg-sunset-red-600/10 hover:shadow-glow-red focus:shadow-glow-red disabled:opacity-50 disabled:shadow-none'
+      : 'bg-sunset-red-600 border-4 border-sunset-red-600 text-white hover:bg-sunset-red-500 hover:border-sunset-red-400 hover:shadow-glow-red focus:shadow-glow-red disabled:bg-gray-700 disabled:border-gray-600 disabled:shadow-none',
+    outline: 'border-4 border-sunset-purple-600 text-white hover:bg-sunset-purple-600/10 hover:shadow-glow-purple focus:shadow-glow-purple disabled:border-gray-700 disabled:text-gray-500 disabled:cursor-not-allowed disabled:shadow-none'
   };
   
   const sizeClasses = {
@@ -62,7 +62,10 @@ const Button: React.FC<ButtonProps> = ({
     sxStyles.minWidth = sx.minWidth;
   }
 
-  const classes = `${baseClasses} ${variantClasses[actualVariant]} ${sizeClasses[size]} ${fullWidth ? 'w-full' : ''} ${className}`;
+  // Add retro shadow effect
+  const shadowClasses = 'shadow-pixel hover:shadow-pixel-lg focus:shadow-pixel-lg disabled:shadow-[2px_2px_0px_theme(colors.gray.800)]';
+
+  const classes = `${baseClasses} ${variantClasses[actualVariant]} ${sizeClasses[size]} ${shadowClasses} ${fullWidth ? 'w-full' : ''} ${className}`;
   
   return (
     <button

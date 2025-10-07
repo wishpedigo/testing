@@ -21,26 +21,26 @@ const Typography: React.FC<TypographyProps> = ({
   paragraph = false,
   sx = {}
 }) => {
-  // Map typography variants to Tailwind classes
+  // Map typography variants to Tailwind classes with pixel fonts for headings
   const variantClasses = {
-    h1: 'text-4xl font-bold',
-    h2: 'text-3xl font-bold',
-    h3: 'text-2xl font-bold',
-    h4: 'text-xl font-bold',
-    h5: 'text-lg font-semibold',
-    h6: 'text-base font-semibold',
-    body1: 'text-base',
-    body2: 'text-sm',
-    caption: 'text-xs',
+    h1: 'text-4xl font-bold font-pixel text-shadow-[2px_2px_0px_#ff6b35]',
+    h2: 'text-3xl font-bold font-pixel text-shadow-[2px_2px_0px_#ff6b35]',
+    h3: 'text-2xl font-bold font-pixel text-shadow-[1px_1px_0px_#ff6b35]',
+    h4: 'text-xl font-bold font-mono',
+    h5: 'text-lg font-semibold font-mono',
+    h6: 'text-base font-semibold font-mono',
+    body1: 'text-base font-mono',
+    body2: 'text-sm font-mono',
+    caption: 'text-xs font-mono',
   };
 
   const colorClasses = {
-    primary: 'text-blue-400',
-    secondary: 'text-pink-400',
+    primary: 'text-sunset-orange-600',
+    secondary: 'text-sunset-red-600',
     textPrimary: 'text-white',
-    textSecondary: 'text-gray-400',
+    textSecondary: 'text-gray-300',
     'text.primary': 'text-white',
-    'text.secondary': 'text-gray-400',
+    'text.secondary': 'text-gray-300',
   };
 
   // Determine the HTML element

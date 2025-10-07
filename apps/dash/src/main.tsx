@@ -15,9 +15,6 @@ initializeFirebase({
   measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID,
 });
 
-// Enable dark mode
-document.documentElement.classList.add('dark');
-
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <App />

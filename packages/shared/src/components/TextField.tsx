@@ -32,10 +32,10 @@ const TextField: React.FC<TextFieldProps> = ({
   margin = 'normal',
 }) => {
   const inputClasses = `
-    w-full px-3 py-2 bg-gray-800 border rounded-lg
-    text-white placeholder-gray-400
-    focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent
-    ${error ? 'border-red-500' : 'border-gray-600'}
+    w-full px-4 py-3 bg-sunset-navy-700 border-4 font-mono text-white placeholder-gray-400
+    focus:outline-none focus:border-sunset-orange-600 focus:shadow-glow-orange
+    transition-all duration-200
+    ${error ? 'border-sunset-red-600 shadow-glow-red' : 'border-gray-600'}
     ${fullWidth ? 'w-full' : ''}
     ${className}
   `;
@@ -49,9 +49,9 @@ const TextField: React.FC<TextFieldProps> = ({
   return (
     <div className={`${marginClasses[margin]} ${fullWidth ? 'w-full' : ''}`}>
       {label && (
-        <label className="block text-sm font-medium text-gray-300 mb-2">
+        <label className="block text-sm font-mono font-medium text-white mb-2">
           {label}
-          {required && <span className="text-red-400 ml-1">*</span>}
+          {required && <span className="text-sunset-orange-600 ml-1">*</span>}
         </label>
       )}
       <input
@@ -65,7 +65,7 @@ const TextField: React.FC<TextFieldProps> = ({
         className={inputClasses}
       />
       {helperText && (
-        <p className={`text-xs mt-1 ${error ? 'text-red-400' : 'text-gray-400'}`}>
+        <p className={`text-xs mt-1 font-mono ${error ? 'text-red-400' : 'text-gray-400'}`}>
           {helperText}
         </p>
       )}

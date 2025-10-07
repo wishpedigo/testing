@@ -44,9 +44,6 @@ const SignUpPage = () => {
         <Typography variant="h4" component="h1" gutterBottom className="text-center">
           Create Account
         </Typography>
-        <Typography variant="body1" color="text.secondary" className="text-center mb-6">
-          Join us and start playing today
-        </Typography>
 
         {error && (
           <Alert severity="error" className="mb-4">

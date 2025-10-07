@@ -64,7 +64,7 @@ const LoginPage = () => {
           <Box className="mt-6">
             <Button
               fullWidth
-              variant="contained"
+              variant="primary"
               type="submit"
               disabled={loading}
               size="large"

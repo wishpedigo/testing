@@ -26,7 +26,7 @@ const AppBar: React.FC<AppBarProps> = ({
     sxClasses.push('bg-gray-900'); // Default to gray-900 for dark theme
   }
 
-  const classes = `bg-gray-900 border-b border-gray-700 ${positionClasses[position]} ${sxClasses.join(' ')} ${className}`;
+  const classes = `bg-gradient-to-r from-sunset-navy-900 to-sunset-navy-700 border-b-4 border-sunset-orange-600 shadow-glow-orange ${positionClasses[position]} ${sxClasses.join(' ')} ${className}`;
   
   return <header className={classes}>{children}</header>;
 };
