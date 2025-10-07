@@ -1,0 +1,32 @@
+{
+  "name": "venue-app-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:marketing": "npm run dev --workspace=apps/marketing",
+    "dev:login": "npm run dev --workspace=apps/login",
+    "dev:game": "npm run dev --workspace=apps/game",
+    "build:marketing": "npm run build --workspace=apps/marketing",
+    "build:login": "npm run build --workspace=apps/login",
+    "build:game": "npm run build --workspace=apps/game",
+    "build:all": "npm run build --workspaces --if-present",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "format": "prettier --write \"**/*.{ts,tsx,json,md}\""
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^7.0.0",
+    "@typescript-eslint/parser": "^7.0.0",
+    "eslint": "^8.57.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.5",
+    "prettier": "^3.2.5",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "firebase": "^12.3.0"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "apps/marketing/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "apps/marketing/dist"
+      }
+    },
+    {
+      "src": "apps/login/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "apps/login/dist"
+      }
+    },
+    {
+      "src": "apps/game/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "apps/game/dist"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/login/(.*)",
+      "dest": "apps/login/$1"
+    },
+    {
+      "src": "/game/(.*)",
+      "dest": "apps/game/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "apps/marketing/$1"
+    }
+  ]
+}
+

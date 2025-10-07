@@ -1,0 +1,18 @@
+{
+  "name": "@venue/firebase",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "dependencies": {
+    "firebase": "^12.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.19"
+  }
+}
+
