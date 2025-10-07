@@ -20,7 +20,7 @@ testing/
 
 - **Build Tool**: Vite
 - **Framework**: React 18 + TypeScript
-- **Styling**: MUI + Tailwind CSS
+- **Styling**: Custom Components + Tailwind CSS
 - **Backend**: Firebase (Auth + Firestore)
 - **Routing**: React Router v6
 - **Monorepo**: npm workspaces
@@ -112,7 +112,7 @@ The apps will be available at:
 
 Contains:
 - UI components (Button, Card, etc.)
-- MUI theme configuration
+- CSS-based theme configuration
 - Shared utilities and types
 - Common constants
 

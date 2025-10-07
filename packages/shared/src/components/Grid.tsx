@@ -30,7 +30,7 @@ const Grid: React.FC<GridProps> = ({
   if (container) {
     classes += ' flex flex-wrap';
     if (spacing > 0) {
-      const gapClass = `gap-${spacing * 2}`; // Convert MUI spacing to Tailwind
+      const gapClass = `gap-${spacing * 2}`; // Convert spacing to Tailwind
       classes += ` ${gapClass}`;
     }
   }

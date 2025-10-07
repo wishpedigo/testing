@@ -2,8 +2,6 @@
 
 ## Overview
 
-We've completely removed MUI dependencies and replaced them with custom components built using Tailwind CSS. This eliminates theme inheritance issues and provides better performance.
-
 ## Available Components
 
 ### Basic Components
@@ -192,22 +190,7 @@ All components are designed for dark theme by default:
 
 ## Benefits
 
-✅ **No MUI dependencies** - Smaller bundle size
 ✅ **Consistent theming** - No inheritance issues
 ✅ **Better performance** - Pure CSS/Tailwind
 ✅ **Full control** - Customizable components
 ✅ **Type safety** - Full TypeScript support
-
-## Migration from MUI
-
-Replace MUI imports with our custom components:
-
-```typescript
-// Before
-import { Button, Card, Typography } from '@mui/material';
-
-// After
-import { Button, Card, Typography } from '@wishlabs/shared';
-```
-
-Most props remain the same, but some MUI-specific props may not be available.

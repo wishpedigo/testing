@@ -22,7 +22,7 @@ const AppBar: React.FC<AppBarProps> = ({
   // Handle sx prop styles
   const sxClasses = [];
   if (sx.bgcolor) {
-    // Convert MUI bgcolor to Tailwind class
+    // Convert bgcolor to Tailwind class
     sxClasses.push('bg-gray-900'); // Default to gray-900 for dark theme
   }
 

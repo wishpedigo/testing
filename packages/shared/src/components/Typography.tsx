@@ -21,7 +21,7 @@ const Typography: React.FC<TypographyProps> = ({
   paragraph = false,
   sx = {}
 }) => {
-  // Map MUI variants to Tailwind classes
+  // Map typography variants to Tailwind classes
   const variantClasses = {
     h1: 'text-4xl font-bold',
     h2: 'text-3xl font-bold',

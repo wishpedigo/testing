@@ -1,4 +1,4 @@
-// CSS-based theme system - no more MUI dependencies!
+// CSS-based theme system
 
 export const theme = {
   colors: {

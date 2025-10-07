@@ -70,7 +70,7 @@ Visit: http://localhost:5175
 
 ## 📁 What You Got
 
-- ✅ **Marketing App** - Beautiful landing page with MUI + Tailwind
+- ✅ **Marketing App** - Beautiful landing page with custom components + Tailwind
 - ✅ **Dashboard App** - Full authentication (signup, login, password reset)
 - ✅ **Game App** - Click & score game with leaderboards
 - ✅ **Shared Components** - Reusable UI components across all apps

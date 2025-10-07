@@ -41,10 +41,10 @@ testing/
 - Better DX than Create React App
 - Native ESM support
 
-**Why MUI + Tailwind?**
-- MUI: Professional components out of the box
-- Tailwind: Utility-first for custom styling
-- Best of both worlds
+**Why Custom Components + Tailwind?**
+- Custom Components: Lightweight, no external dependencies
+- Tailwind: Utility-first for consistent styling
+- Full control over design system
 - Configured to work together harmoniously
 
 **Why Firebase?**
@@ -125,9 +125,13 @@ testing/
 **Purpose**: Reusable UI and utilities
 
 **Exports**:
-- `Button` - MUI button wrapper
-- `Card` - MUI card with Tailwind
-- `theme` - MUI theme configuration
+- `Button` - Custom button component
+- `Card` - Custom card component
+- `Typography` - Text component with variants
+- `Container`, `Grid`, `Box` - Layout components
+- `TextField`, `Alert` - Form components
+- `AppBar`, `Toolbar` - Navigation components
+- `theme` - CSS-based theme configuration
 - `formatDate`, `truncateText`, `sleep` - Utilities
 - `User`, `GameScore`, `VenueInfo` - TypeScript types
 
@@ -192,19 +196,23 @@ Game ends → saveGameScore()
 
 ## 🎨 Design System
 
-### Colors (MUI Theme)
-- Primary: Blue (#1976d2)
-- Secondary: Pink (#dc004e)
+### Colors (Dark Theme)
+- Primary: Blue (#90caf9)
+- Secondary: Pink (#f48fb1)
+- Background: Dark (#121212)
+- Paper: Dark Gray (#1e1e1e)
+- Text: White (#ffffff)
+- Text Secondary: Gray (#b3b3b3)
 - Can be customized in `packages/shared/src/theme.ts`
 
 ### Typography
 - System fonts for performance
-- MUI typography variants
+- Custom typography variants (h1-h6, body1, body2, caption)
 - Responsive sizing
 
 ### Layout
 - Container maxWidth: lg (1280px)
-- Grid system (MUI Grid)
+- Custom Grid system (12-column)
 - Responsive breakpoints
 
 ## 🔐 Security Considerations
@@ -335,7 +343,7 @@ Must be set in Vercel:
 
 - [Vite Docs](https://vitejs.dev/)
 - [React Router](https://reactrouter.com/)
-- [MUI Documentation](https://mui.com/)
+- [Tailwind CSS Components](https://tailwindcss.com/docs/components)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Firebase Docs](https://firebase.google.com/docs)
 - [TypeScript Handbook](https://www.typescriptlang.org/docs/)

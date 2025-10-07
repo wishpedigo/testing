@@ -37,7 +37,7 @@
 │  │    - Button               │  │    - signUp()            │   │
 │  │    - Card                 │  │    - signIn()            │   │
 │  │                           │  │    - logOut()            │   │
-│  │  • Theme (MUI)            │  │                          │   │
+│  │  • Theme                  │  │                          │   │
 │  │                           │  │  • Firestore Functions   │   │
 │  │  • Utilities              │  │    - createDocument()    │   │
 │  │    - formatDate()         │  │    - getDocument()       │   │
@@ -154,7 +154,7 @@ apps/marketing/
   ├── Dependencies:
   │   ├── @venue/shared (UI components, theme)
   │   ├── react-router-dom (navigation)
-  │   └── MUI + Tailwind (styling)
+  │   └── Tailwind (styling)
   │
   └── External Links:
       └── localhost:5174 (Login app)
@@ -165,7 +165,7 @@ apps/login/
   │   ├── @venue/shared (UI components, types)
   │   ├── @venue/firebase (auth functions)
   │   ├── react-router-dom (routing)
-  │   └── MUI + Tailwind (styling)
+  │   └── Tailwind (styling)
   │
   └── External Links:
       └── localhost:5175 (Game app)
@@ -175,7 +175,7 @@ apps/game/
   ├── Dependencies:
   │   ├── @venue/shared (UI components, types)
   │   ├── @venue/firebase (auth + firestore)
-  │   └── MUI + Tailwind (styling)
+  │   └── Tailwind (styling)
   │
   └── External Links:
       └── localhost:5174 (Login prompt)
@@ -266,7 +266,7 @@ Local Development
 │ PRESENTATION LAYER                                              │
 │ • React 18                                                      │
 │ • TypeScript                                                    │
-│ • MUI (Material-UI) Components                                 │
+│  Components                                 │
 │ • Tailwind CSS Utilities                                       │
 └─────────────────────────────────────────────────────────────────┘
                             ▲
@@ -342,7 +342,7 @@ testing/
 │   │   │   ├── components/     # Button, Card
 │   │   │   ├── types/          # TypeScript interfaces
 │   │   │   ├── utils/          # Helper functions
-│   │   │   ├── theme.ts        # MUI theme
+│   │   │   ├── theme.ts        # CSS-based theme
 │   │   │   └── index.ts        # Exports
 │   │   └── package.json
 │   │

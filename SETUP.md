@@ -68,7 +68,7 @@ testing/
 │   ├── login/         # Authentication app - Port 5174
 │   └── game/          # Game app - Port 5175
 ├── packages/
-│   ├── shared/        # Shared UI components (MUI + Tailwind)
+│   ├── shared/        # Shared UI components (Custom + Tailwind)
 │   └── firebase/      # Firebase utilities
 └── vercel.json        # Deployment config
 ```
@@ -80,7 +80,7 @@ testing/
 - Features showcase
 - About page
 - Navigation with links to login app
-- Responsive design with MUI + Tailwind
+- Responsive design with custom components + Tailwind
 
 ### Login App (Port 5174)
 - User registration (sign up)
