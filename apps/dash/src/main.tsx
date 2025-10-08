@@ -15,6 +15,7 @@ initializeFirebase({
   measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID,
 });
 
+
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <App />

@@ -36,7 +36,7 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-900">
+    <div className="min-h-screen">
       <GameNavbar user={user} />
       {user ? <GameScreen user={user} /> : <LoginPrompt />}
     </div>

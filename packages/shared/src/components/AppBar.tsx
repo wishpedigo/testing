@@ -26,7 +26,7 @@ const AppBar: React.FC<AppBarProps> = ({
     sxClasses.push('bg-primary-500'); // Default to primary blue
   }
 
-  const classes = `bg-gradient-to-r from-primary-500 to-primary-600 border-b-4 border-primary-700 shadow-glow-primary ${positionClasses[position]} ${sxClasses.join(' ')} ${className}`;
+  const classes = ` ${positionClasses[position]} ${sxClasses.join(' ')} ${className}`;
   
   return <header className={classes}>{children}</header>;
 };

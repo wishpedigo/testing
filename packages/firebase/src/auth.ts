@@ -31,6 +31,7 @@ export const signIn = async (
   email: string,
   password: string
 ): Promise<User> => {
+  
   const userCredential = await signInWithEmailAndPassword(
     getFirebaseAuth(),
     email,
@@ -60,4 +61,3 @@ export const observeAuthState = (
 export const getCurrentUser = (): User | null => {
   return getFirebaseAuth().currentUser;
 };
-

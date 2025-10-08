@@ -18,7 +18,7 @@ const GameNavbar = ({ user }: GameNavbarProps) => {
   };
 
   return (
-    <AppBar position="static" sx={{ bgcolor: '#1a1a1a' }}>
+    <AppBar position="static">
       <Toolbar>
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
           🎮 Venue Game

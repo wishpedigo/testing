@@ -33,13 +33,27 @@ const DashboardPage = ({ user }: DashboardPageProps) => {
       </AppBar>
 
       <Container maxWidth="lg" className="py-12">
+        <Grid container spacing={4}>
           <Grid item xs={12} md={6}>
             <Card>
+              <Typography variant="h5" gutterBottom>
+                Welcome, {user?.displayName || user?.email}!
+              </Typography>
               <Typography paragraph color="text.secondary">
                 Email: {user?.email}
               </Typography>
+              <Button 
+                variant="contained" 
+                size="large" 
+                color="primary"
+                onClick={() => window.location.href = import.meta.env.VITE_GAME_URL || 'http://game.localhost:5173'}
+                sx={{ mt: 2 }}
+              >
+                🎮 Play Game
+              </Button>
             </Card>
           </Grid>
+        </Grid>
       </Container>
     </>
   );
