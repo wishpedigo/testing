@@ -5,6 +5,7 @@ import cors from 'cors'
 import { connectDatabase } from './database/connection'
 import { SimulationEngine } from './simulation/SimulationEngine'
 import { GameSocket } from './websocket/gameSocket'
+import adminRouter from './routes/admin'
 import { config } from './config'
 
 const app = express()
@@ -24,11 +25,23 @@ async function startServer() {
     // Connect to database
     await connectDatabase()
     
-    // Initialize simulation
-    simulation = new SimulationEngine('paradise-valley')
+    // Initialize simulation engine
+    simulation = new SimulationEngine()
+    
+    // Try to initialize with active world, or create a default one
+    try {
+      await simulation.initializeWithActiveWorld()
+      console.log('🏘️ Paradise Valley simulation initialized with active world')
+    } catch (error) {
+      console.log('⚠️ No active world found, simulation will start when a world is created')
+    }
+    
     gameSocket = new GameSocket(io, simulation)
     
-    console.log('🏘️ Paradise Valley simulation initialized')
+    // Add admin routes
+    app.use('/api/admin', adminRouter)
+    
+    console.log('🏘️ Paradise Valley simulation engine ready')
     
     // Simulation loop - 30 ticks per second
     const tickInterval = 1000 / simulation.getTickRate()

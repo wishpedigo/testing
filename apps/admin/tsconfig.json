@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "composite": true,
+    "outDir": "./dist",
+    "jsx": "react-jsx",
+    "module": "esnext",
+    "target": "es2020",
+    "lib": ["es2020", "dom", "dom.iterable"],
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "types": ["vite/client"],
+    "baseUrl": ".",
+    "paths": {
+      "@wishlabs/shared": ["../../packages/shared/src"],
+      "@wishlabs/firebase": ["../../packages/firebase/src"],
+      "@admin/components": ["src/components"],
+      "@admin/pages": ["src/pages"],
+      "@admin/services": ["src/services"]
+    }
+  },
+  "include": ["src"]
+}
