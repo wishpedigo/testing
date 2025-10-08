@@ -70,15 +70,14 @@ const GameScreen = ({ user }: GameScreenProps) => {
               </Typography>
               <Typography paragraph color="text.secondary">
                 Welcome to Paradise Valley, a small idealistic liberal town in the Pioneer Valley! 
-                This is a living, breathing simulation that runs in real-time, matching the actual 
-                day/night cycles, dates, and weather of the East Coast. Watch as the town lives 
-                and breathes on its own - no clicking required!
+                This is a living, breathing simulation that runs on a dedicated game server, 
+                showing real East Coast time, weather patterns, and autonomous citizens moving 
+                around on a grid-based town.
               </Typography>
               <Typography paragraph color="text.secondary">
-                The simulation shows real East Coast time, seasonal weather patterns, and autonomous 
-                town activity that changes throughout the day. People move around, vehicles travel 
-                the roads, and the town's activity level rises and falls with the natural rhythms 
-                of daily life.
+                Watch as citizens with unique personalities wander around the town, their moods 
+                changing based on their needs. The simulation runs 24/7 on the server, so the 
+                town continues living even when you're not watching!
               </Typography>
               <Box className="mt-4">
                 <Button variant="contained" size="large" onClick={startGame}>
@@ -100,27 +99,30 @@ const GameScreen = ({ user }: GameScreenProps) => {
                   • Real East Coast time
                 </Typography>
                 <Typography variant="body2" className="py-2">
-                  • Day/night cycles
+                  • Grid-based movement
                 </Typography>
                 <Typography variant="body2" className="py-2">
                   • Seasonal weather
                 </Typography>
                 <Typography variant="body2" className="py-2">
-                  • Autonomous town life
+                  • Autonomous citizens
                 </Typography>
                 <Typography variant="body2" className="py-2">
-                  • No clicking required
+                  • Server-authoritative
                 </Typography>
               </Box>
             </Card>
 
             <Card>
               <Typography variant="h6" gutterBottom>
-                🏘️ Paradise Valley Features
+                🏘️ Paradise Valley Buildings
               </Typography>
               <Box>
                 <Typography variant="body2" className="py-2">
-                  • Progressive School
+                  • Cozy House
+                </Typography>
+                <Typography variant="body2" className="py-2">
+                  • Artisan Home
                 </Typography>
                 <Typography variant="body2" className="py-2">
                   • Local Co-op
@@ -129,10 +131,7 @@ const GameScreen = ({ user }: GameScreenProps) => {
                   • Bookstore & Cafe
                 </Typography>
                 <Typography variant="body2" className="py-2">
-                  • Community Center
-                </Typography>
-                <Typography variant="body2" className="py-2">
-                  • Art Gallery
+                  • Progressive School
                 </Typography>
               </Box>
             </Card>
