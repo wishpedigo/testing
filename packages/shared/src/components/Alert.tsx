@@ -14,17 +14,17 @@ const Alert: React.FC<AlertProps> = ({
   onClose
 }) => {
   const severityClasses = {
-    error: 'bg-sunset-navy-700 border-4 border-sunset-red-600 text-white shadow-glow-red',
-    warning: 'bg-sunset-navy-700 border-4 border-sunset-orange-600 text-white shadow-glow-orange',
-    info: 'bg-sunset-navy-700 border-4 border-sunset-purple-600 text-white shadow-glow-purple',
-    success: 'bg-sunset-navy-700 border-4 border-sunset-green-600 text-white shadow-glow-green',
+    error: 'bg-bg-secondary border-4 border-error-600 text-text-primary shadow-glow-error',
+    warning: 'bg-bg-secondary border-4 border-warning-600 text-text-primary shadow-glow-warning',
+    info: 'bg-bg-secondary border-4 border-info-600 text-text-primary shadow-glow-info',
+    success: 'bg-bg-secondary border-4 border-success-600 text-text-primary shadow-glow-success',
   };
 
   const iconClasses = {
-    error: 'text-sunset-red-600',
-    warning: 'text-sunset-orange-600',
-    info: 'text-sunset-purple-600',
-    success: 'text-sunset-green-600',
+    error: 'text-error-600',
+    warning: 'text-warning-600',
+    info: 'text-info-600',
+    success: 'text-success-600',
   };
 
   const icons = {
@@ -46,7 +46,7 @@ const Alert: React.FC<AlertProps> = ({
         {onClose && (
           <button
             onClick={onClose}
-            className="ml-4 text-white hover:text-gray-300 font-mono text-xl"
+            className="ml-4 text-text-primary hover:text-text-secondary font-mono text-xl"
           >
             ×
           </button>

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import { Container, TextField, Typography, Box, Alert, Button, Card } from '@wishlabs/shared';
+import { Container, TextField, Typography, Box, Alert, Button, Card, LinkText } from '@wishlabs/shared';
 import { signUp } from '@wishlabs/firebase';
 
 const SignUpPage = () => {
@@ -40,11 +40,7 @@ const SignUpPage = () => {
 
   return (
     <Container maxWidth="sm" className="py-16">
-      <Card>
-        <Typography variant="h4" component="h1" gutterBottom className="text-center">
-          Create Account
-        </Typography>
-
+      <Card title="Create Account">
         {error && (
           <Alert severity="error" className="mb-4">
             {error}
@@ -89,13 +85,12 @@ const SignUpPage = () => {
             margin="normal"
           />
 
-          <Box className="mt-6">
+          <Box className="mt-6 flex justify-end">
             <Button
-              fullWidth
-              variant="contained"
+              variant="primary"
               type="submit"
               disabled={loading}
-              size="large"
+              size="sm"
             >
               {loading ? 'Creating Account...' : 'Sign Up'}
             </Button>
@@ -105,8 +100,8 @@ const SignUpPage = () => {
         <Box className="mt-4 text-center">
           <Typography variant="body2">
             Already have an account?{' '}
-            <Link to="/login" className="text-blue-600 hover:underline font-semibold">
-              Sign In
+            <Link to="/login">
+              <LinkText>Sign In</LinkText>
             </Link>
           </Typography>
         </Box>
@@ -115,5 +110,5 @@ const SignUpPage = () => {
   );
 };
 
-export default SignUpPage;
 
+export default SignUpPage;

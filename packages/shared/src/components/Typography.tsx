@@ -35,12 +35,12 @@ const Typography: React.FC<TypographyProps> = ({
   };
 
   const colorClasses = {
-    primary: 'text-sunset-orange-600',
-    secondary: 'text-sunset-red-600',
-    textPrimary: 'text-white',
-    textSecondary: 'text-gray-300',
-    'text.primary': 'text-white',
-    'text.secondary': 'text-gray-300',
+    primary: 'text-primary-600',
+    secondary: 'text-secondary-600',
+    textPrimary: 'text-text-primary',
+    textSecondary: 'text-text-secondary',
+    'text.primary': 'text-text-primary',
+    'text.secondary': 'text-text-secondary',
   };
 
   // Determine the HTML element

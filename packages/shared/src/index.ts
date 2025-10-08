@@ -9,6 +9,7 @@ export { default as AppBar } from './components/AppBar';
 export { default as Toolbar } from './components/Toolbar';
 export { default as TextField } from './components/TextField';
 export { default as Alert } from './components/Alert';
+export { default as LinkText } from './components/LinkText';
 
 // Theme
 export { theme } from './theme';

@@ -36,7 +36,7 @@ function App() {
 
   return (
     <Router>
-      <div className="min-h-screen bg-gradient-to-br from-sunset-navy-900 via-sunset-navy-800 to-sunset-navy-700">
+      <div className="min-h-screen bg-bg-primary">
         <Routes>
           <Route
             path="/login"

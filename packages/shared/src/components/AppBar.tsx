@@ -23,10 +23,10 @@ const AppBar: React.FC<AppBarProps> = ({
   const sxClasses = [];
   if (sx.bgcolor) {
     // Convert bgcolor to Tailwind class
-    sxClasses.push('bg-gray-900'); // Default to gray-900 for dark theme
+    sxClasses.push('bg-primary-500'); // Default to primary blue
   }
 
-  const classes = `bg-gradient-to-r from-sunset-navy-900 to-sunset-navy-700 border-b-4 border-sunset-orange-600 shadow-glow-orange ${positionClasses[position]} ${sxClasses.join(' ')} ${className}`;
+  const classes = `bg-gradient-to-r from-primary-500 to-primary-600 border-b-4 border-primary-700 shadow-glow-primary ${positionClasses[position]} ${sxClasses.join(' ')} ${className}`;
   
   return <header className={classes}>{children}</header>;
 };

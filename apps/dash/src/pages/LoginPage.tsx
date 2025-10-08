@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import { Container, TextField, Typography, Box, Alert, Button, Card } from '@wishlabs/shared';
+import { Container, TextField, Typography, Box, Alert, Button, Card, LinkText } from '@wishlabs/shared';
 import { signIn } from '@wishlabs/firebase';
 
 const LoginPage = () => {
@@ -27,14 +27,9 @@ const LoginPage = () => {
 
   return (
     <Container maxWidth="sm" className="py-16">
-      <Card>
-        <Typography variant="h4" component="h1" gutterBottom className="text-center">
-          Welcome Back
-        </Typography>
-        <Typography variant="body1" color="text.secondary" className="text-center mb-6">
-          Sign in to access your account
-        </Typography>
-
+      <Card
+        title="Login"
+      >
         {error && (
           <Alert severity="error" className="mb-4">
             {error}
@@ -43,7 +38,6 @@ const LoginPage = () => {
 
         <form onSubmit={handleSubmit}>
           <TextField
-            fullWidth
             label="Email"
             type="email"
             value={email}
@@ -52,7 +46,6 @@ const LoginPage = () => {
             margin="normal"
           />
           <TextField
-            fullWidth
             label="Password"
             type="password"
             value={password}
@@ -61,32 +54,32 @@ const LoginPage = () => {
             margin="normal"
           />
 
-          <Box className="mt-6">
+          <Box className="mt-6 flex justify-end">
             <Button
-              fullWidth
               variant="primary"
               type="submit"
               disabled={loading}
-              size="large"
+              size="sm"
             >
-              {loading ? 'Signing In...' : 'Sign In'}
+              {loading ? 'Logging In...' : 'Log In'}
             </Button>
           </Box>
         </form>
 
         <Box className="mt-4 text-center">
-          <Link to="/forgot-password" className="text-blue-400 hover:text-blue-300 hover:underline">
-            Forgot password?
+          <Link to="/forgot-password">
+            <LinkText>Forgot password?</LinkText>
           </Link>
         </Box>
 
         <Box className="mt-4 text-center">
           <Typography variant="body2">
             Don't have an account?{' '}
-            <Link to="/signup" className="text-blue-400 hover:text-blue-300 hover:underline font-semibold">
-              Sign Up
-            </Link>
+      
           </Typography>
+          <Link to="/signup">
+              <LinkText>Sign Up</LinkText>
+            </Link>
         </Box>
       </Card>
     </Container>

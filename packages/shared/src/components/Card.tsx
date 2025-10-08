@@ -4,15 +4,26 @@ interface CardProps {
   children: React.ReactNode;
   className?: string;
   onClick?: () => void;
+  title?: string;
 }
 
-const Card: React.FC<CardProps> = ({ children, className = '', onClick }) => {
+const Card: React.FC<CardProps> = ({ children, className = '', onClick, title }) => {
   return (
     <div 
-      className={`bg-sunset-navy-800 border-4 border-sunset-orange-600 shadow-pixel p-6 font-mono transition-all duration-200 hover:shadow-pixel-lg hover:border-sunset-orange-500 hover:shadow-glow-orange ${onClick ? 'cursor-pointer' : ''} ${className}`}
+      className={`border-[12px] border-[#1e3a8a] border-dashed shadow-sm p-1 rounded-[1px] border-solid font-mono ${onClick ? 'cursor-pointer' : ''} ${className}`}
       onClick={onClick}
     >
-      {children}
+      {title && (
+        <div 
+          className="text-white px-2 font-mono text-md py-1 font-bold border-b border-primary-700"
+          style={{ background: 'linear-gradient(to right, #1e40af, #1e3a8a)' }}
+        >
+          {title}
+        </div>
+      )}
+      <div className="p-6">
+        {children}
+      </div>
     </div>
   );
 };

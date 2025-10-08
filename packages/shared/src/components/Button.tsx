@@ -16,7 +16,7 @@ interface ButtonProps {
 const Button: React.FC<ButtonProps> = ({ 
   children, 
   variant = 'primary', 
-  size = 'md', 
+  size = 'sm', 
   disabled = false,
   onClick,
   type = 'button',
@@ -32,12 +32,12 @@ const Button: React.FC<ButtonProps> = ({
   
   const variantClasses = {
     primary: color === 'inherit' 
-      ? 'bg-transparent border-4 border-sunset-orange-600 text-white hover:bg-sunset-orange-600/10 hover:shadow-glow-orange focus:shadow-glow-orange disabled:opacity-50 disabled:shadow-none'
-      : 'bg-sunset-orange-600 border-4 border-sunset-orange-600 text-white hover:bg-sunset-orange-500 hover:border-sunset-orange-400 hover:shadow-glow-orange focus:shadow-glow-orange disabled:bg-gray-600 disabled:border-gray-600 disabled:shadow-none',
+      ? 'border-2 border-primary-600 text-text-primary disabled:opacity-50'
+      : 'border-2 border-primary-600 text-text-primary disabled:bg-gray-400 disabled:border-gray-400',
     secondary: color === 'inherit'
-      ? 'bg-transparent border-4 border-sunset-red-600 text-white hover:bg-sunset-red-600/10 hover:shadow-glow-red focus:shadow-glow-red disabled:opacity-50 disabled:shadow-none'
-      : 'bg-sunset-red-600 border-4 border-sunset-red-600 text-white hover:bg-sunset-red-500 hover:border-sunset-red-400 hover:shadow-glow-red focus:shadow-glow-red disabled:bg-gray-700 disabled:border-gray-600 disabled:shadow-none',
-    outline: 'border-4 border-sunset-purple-600 text-white hover:bg-sunset-purple-600/10 hover:shadow-glow-purple focus:shadow-glow-purple disabled:border-gray-700 disabled:text-gray-500 disabled:cursor-not-allowed disabled:shadow-none'
+      ? 'border-2 border-secondary-600 text-text-primary  disabled:opacity-50'
+      : 'border-2 border-secondary-600 text-text-primary  disabled:bg-gray-400 disabled:border-gray-400',
+    outline: 'border-2 border-info-600 text-text-primary disabled:border-gray-400 disabled:text-gray-400 disabled:cursor-not-allowed'
   };
   
   const sizeClasses = {
@@ -47,7 +47,7 @@ const Button: React.FC<ButtonProps> = ({
     large: 'px-6 py-3 text-lg'
   };
   
-  // Handle sx prop styles
+  // Handle sx prop styles and button background
   const sxStyles: React.CSSProperties = {};
   if (sx.fontSize) {
     sxStyles.fontSize = sx.fontSize;
@@ -61,11 +61,18 @@ const Button: React.FC<ButtonProps> = ({
   if (sx.minWidth) {
     sxStyles.minWidth = sx.minWidth;
   }
+  
+  // Add grey background for primary/secondary buttons
+  if (actualVariant === 'primary' && color !== 'inherit') {
+    sxStyles.backgroundColor = '#AAA'; // bg-secondary grey
+  } else if (actualVariant === 'secondary' && color !== 'inherit') {
+    sxStyles.backgroundColor = '#AAA'; // bg-secondary grey
+  }
 
-  // Add retro shadow effect
-  const shadowClasses = 'shadow-pixel hover:shadow-pixel-lg focus:shadow-pixel-lg disabled:shadow-[2px_2px_0px_theme(colors.gray.800)]';
+  // Add classic raised button shadow effect
+  // const shadowClasses = 'shadow-[inset_0_1px_0_0_rgba(255,255,255,0.2),inset_0_-1px_0_0_rgba(0,0,0,0.2),0_2px_4px_rgba(0,0,0,0.1)] hover:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.3),inset_0_-1px_0_0_rgba(0,0,0,0.3),0_4px_8px_rgba(0,0,0,0.15)] active:shadow-[inset_0_1px_0_0_rgba(0,0,0,0.2),inset_0_-1px_0_0_rgba(255,255,255,0.2),0_1px_2px_rgba(0,0,0,0.1)] disabled:shadow-none';
 
-  const classes = `${baseClasses} ${variantClasses[actualVariant]} ${sizeClasses[size]} ${shadowClasses} ${fullWidth ? 'w-full' : ''} ${className}`;
+  const classes = `${baseClasses} ${variantClasses[actualVariant]} ${sizeClasses[size]} ${fullWidth ? 'w-full' : ''} ${className}`;
   
   return (
     <button

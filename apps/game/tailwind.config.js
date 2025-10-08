@@ -1,11 +1,8 @@
-import rootConfig from '../../tailwind.config.js';
+import { createTailwindConfig } from '@wishlabs/theme'
 
 /** @type {import('tailwindcss').Config} */
-export default {
-  ...rootConfig,
-  content: [
-    './index.html',
-    './src/**/*.{js,ts,jsx,tsx}',
-    '../../packages/shared/src/**/*.{js,ts,jsx,tsx}',
-  ],
-}
+export default createTailwindConfig([
+  './index.html',
+  './src/**/*.{js,ts,jsx,tsx}',
+  '../../packages/shared/src/**/*.{js,ts,jsx,tsx}',
+])

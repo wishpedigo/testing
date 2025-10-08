@@ -1,0 +1,39 @@
+{
+  "name": "@wishlabs/theme",
+  "version": "1.0.0",
+  "description": "Shared Tailwind CSS theme configuration for Wishlabs applications",
+  "keywords": ["tailwindcss", "theme", "css", "design-system"],
+  "author": "Wishlabs",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wishlabs/venue-app-monorepo",
+    "directory": "packages/theme"
+  },
+  "type": "module",
+  "files": ["dist"],
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts",
+    "dev": "tsup src/index.ts --format cjs,esm --dts --watch",
+    "clean": "rm -rf dist"
+  },
+  "devDependencies": {
+    "tsup": "^8.0.1",
+    "typescript": "^5.0.0"
+  },
+  "peerDependencies": {
+    "tailwindcss": "^3.0.0"
+  }
+}

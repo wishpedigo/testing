@@ -9,14 +9,14 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Sunset theme styles */
+/* AIM/MySpace style theme */
 html {
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 body {
-  background: linear-gradient(135deg, #0a1128 0%, #16213e 50%, #1e2a47 100%);
-  color: #ffffff;
+  background: #AAAAAA;
+  color: #000000;
   min-height: 100vh;
 }
 

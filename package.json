@@ -16,7 +16,7 @@
     "build:game": "npm run build --workspace=apps/game",
     "build:all": "npm run build --workspaces --if-present",
     "setup:dev": "./setup-dev.sh",
-    "build:packages": "npm run build --workspace=packages/shared && npm run build --workspace=packages/firebase",
+    "build:packages": "npm run build --workspace=packages/theme && npm run build --workspace=packages/shared && npm run build --workspace=packages/firebase",
     "publish:packages": "npm run build:packages && cd packages/shared && npm publish --access public && cd ../firebase && npm publish --access public",
     "deploy:marketing": "cd apps/marketing && vercel --prod",
     "deploy:dash": "cd apps/dash && vercel --prod",

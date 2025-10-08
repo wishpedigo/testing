@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Container, TextField, Typography, Box, Alert, Button, Card } from '@wishlabs/shared';
+import { Container, TextField, Typography, Box, Alert, Button, Card, LinkText } from '@wishlabs/shared';
 import { resetPassword } from '@wishlabs/firebase';
 
 const ForgotPasswordPage = () => {
@@ -27,10 +27,9 @@ const ForgotPasswordPage = () => {
 
   return (
     <Container maxWidth="sm" className="py-16">
-      <Card>
-        <Typography variant="h4" component="h1" gutterBottom className="text-center">
-          Reset Password
-        </Typography>
+      <Card
+        title="Reset Password"
+      >
         <Typography variant="body1" color="text.secondary" className="text-center mb-6">
           Enter your email to receive a password reset link
         </Typography>
@@ -58,13 +57,12 @@ const ForgotPasswordPage = () => {
             margin="normal"
           />
 
-          <Box className="mt-6">
+          <Box className="mt-6 flex justify-end">
             <Button
-              fullWidth
-              variant="contained"
+              variant="primary"
               type="submit"
               disabled={loading}
-              size="large"
+              size="sm"
             >
               {loading ? 'Sending...' : 'Send Reset Link'}
             </Button>
@@ -72,8 +70,8 @@ const ForgotPasswordPage = () => {
         </form>
 
         <Box className="mt-4 text-center">
-          <Link to="/login" className="text-blue-600 hover:underline">
-            Back to Sign In
+          <Link to="/login">
+            <LinkText>Back to Sign In</LinkText>
           </Link>
         </Box>
       </Card>
