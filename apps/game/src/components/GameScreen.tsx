@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Container, Typography, Box, Grid, Button, Card } from '@wishlabs/shared';
 import { User } from '@wishlabs/shared';
 import { saveGameScore, getUserScores, getTopScores } from '@wishlabs/firebase';
-import Game from './Game';
+import GameIframe from './GameIframe';
 
 interface GameScreenProps {
   user: User;
@@ -60,23 +60,29 @@ const GameScreen = ({ user }: GameScreenProps) => {
       <Grid container spacing={4}>
         <Grid item xs={12} md={8}>
           {isPlaying ? (
-            <Game onGameEnd={handleGameEnd} />
+            <Box sx={{ height: '500px', width: '100%' }}>
+              <GameIframe onGameEnd={handleGameEnd} />
+            </Box>
           ) : (
             <Card>
               <Typography variant="h4" gutterBottom>
-                Click & Score Game
+                Paradise Valley
               </Typography>
               <Typography paragraph color="text.secondary">
-                Click the button as many times as you can in 10 seconds!
+                Welcome to Paradise Valley, a small idealistic liberal town in the Pioneer Valley! 
+                This is a living, breathing simulation that runs in real-time, matching the actual 
+                day/night cycles, dates, and weather of the East Coast. Watch as the town lives 
+                and breathes on its own - no clicking required!
               </Typography>
-              {currentScore > 0 && (
-                <Typography variant="h5" color="primary" gutterBottom>
-                  Your Score: {currentScore}
-                </Typography>
-              )}
+              <Typography paragraph color="text.secondary">
+                The simulation shows real East Coast time, seasonal weather patterns, and autonomous 
+                town activity that changes throughout the day. People move around, vehicles travel 
+                the roads, and the town's activity level rises and falls with the natural rhythms 
+                of daily life.
+              </Typography>
               <Box className="mt-4">
                 <Button variant="contained" size="large" onClick={startGame}>
-                  {currentScore > 0 ? 'Play Again' : 'Start Game'}
+                  Enter Paradise Valley
                 </Button>
               </Box>
             </Card>
@@ -87,44 +93,48 @@ const GameScreen = ({ user }: GameScreenProps) => {
           <Box className="space-y-4">
             <Card>
               <Typography variant="h6" gutterBottom>
-                🏆 Top Scores
+                🌅 Live Simulation Info
               </Typography>
-              {topScores.length > 0 ? (
-                <Box>
-                  {topScores.map((score, index) => (
-                    <Box key={score.id} className="py-2 border-b last:border-b-0">
-                      <Typography variant="body2">
-                        #{index + 1} - {score.score} points
-                      </Typography>
-                    </Box>
-                  ))}
-                </Box>
-              ) : (
-                <Typography variant="body2" color="text.secondary">
-                  No scores yet. Be the first!
+              <Box>
+                <Typography variant="body2" className="py-2">
+                  • Real East Coast time
                 </Typography>
-              )}
+                <Typography variant="body2" className="py-2">
+                  • Day/night cycles
+                </Typography>
+                <Typography variant="body2" className="py-2">
+                  • Seasonal weather
+                </Typography>
+                <Typography variant="body2" className="py-2">
+                  • Autonomous town life
+                </Typography>
+                <Typography variant="body2" className="py-2">
+                  • No clicking required
+                </Typography>
+              </Box>
             </Card>
 
             <Card>
               <Typography variant="h6" gutterBottom>
-                📊 Your Best Scores
+                🏘️ Paradise Valley Features
               </Typography>
-              {userScores.length > 0 ? (
-                <Box>
-                  {userScores.slice(0, 5).map((score, index) => (
-                    <Box key={score.id} className="py-2 border-b last:border-b-0">
-                      <Typography variant="body2">
-                        #{index + 1} - {score.score} points
-                      </Typography>
-                    </Box>
-                  ))}
-                </Box>
-              ) : (
-                <Typography variant="body2" color="text.secondary">
-                  Play your first game to see your scores!
+              <Box>
+                <Typography variant="body2" className="py-2">
+                  • Progressive School
                 </Typography>
-              )}
+                <Typography variant="body2" className="py-2">
+                  • Local Co-op
+                </Typography>
+                <Typography variant="body2" className="py-2">
+                  • Bookstore & Cafe
+                </Typography>
+                <Typography variant="body2" className="py-2">
+                  • Community Center
+                </Typography>
+                <Typography variant="body2" className="py-2">
+                  • Art Gallery
+                </Typography>
+              </Box>
             </Card>
           </Box>
         </Grid>

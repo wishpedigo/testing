@@ -10,7 +10,7 @@ interface CardProps {
 const Card: React.FC<CardProps> = ({ children, className = '', onClick, title }) => {
   return (
     <div 
-      className={`border-[12px] border-[#1e3a8a] border-dashed shadow-sm p-1 rounded-[1px] border-solid font-mono ${onClick ? 'cursor-pointer' : ''} ${className}`}
+      className={`border-[1px] border-[#1e3a8a] shadow-sm p-1 rounded-[1px] border-solid font-mono ${onClick ? 'cursor-pointer' : ''} ${className}`}
       onClick={onClick}
     >
       {title && (

@@ -20,15 +20,12 @@ const GameNavbar = ({ user }: GameNavbarProps) => {
   return (
     <AppBar position="static">
       <Toolbar>
-        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-          🎮 Venue Game
-        </Typography>
         {user && (
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
             <Typography variant="body2">
               {user.displayName || user.email}
             </Typography>
-            <Button color="inherit" onClick={handleLogout}>
+            <Button onClick={handleLogout}>
               Logout
             </Button>
           </Box>

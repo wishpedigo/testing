@@ -24,11 +24,9 @@ const LoginPrompt = () => {
 
   return (
     <Container maxWidth="sm" className="py-16">
-      <Card>
-        <Typography variant="h4" component="h1" gutterBottom className="text-center">
-          Welcome to the Game!
-        </Typography>
-        
+      <Card
+        title="Login"
+      >
         {error && (
           <Alert severity="error" className="mb-4">
             {error}

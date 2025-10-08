@@ -9,11 +9,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@wishlabs/theme": "file:../../packages/theme",
-    "@wishlabs/shared": "^1.0",
     "@wishlabs/firebase": "^1.0",
+    "@wishlabs/shared": "^1.0",
+    "@wishlabs/theme": "file:../../packages/theme",
+    "phaser": "^3.90.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^7.9.3"
   },
   "devDependencies": {
     "@types/react": "^18.2.55",
@@ -26,4 +28,3 @@
     "vite": "^5.1.0"
   }
 }
-

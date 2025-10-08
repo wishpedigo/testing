@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { observeAuthState, getCurrentUser } from '@wishlabs/firebase';
 import { User } from '@wishlabs/shared';
 import GameScreen from './components/GameScreen';
 import LoginPrompt from './components/LoginPrompt';
 import GameNavbar from './components/GameNavbar';
+import GameEmbedPage from './pages/GameEmbedPage';
 
 function App() {
   const [user, setUser] = useState<User | null>(null);
@@ -36,10 +38,17 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen">
-      <GameNavbar user={user} />
-      {user ? <GameScreen user={user} /> : <LoginPrompt />}
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/game-embed" element={<GameEmbedPage />} />
+        <Route path="*" element={
+          <div className="min-h-screen">
+            <GameNavbar user={user} />
+            {user ? <GameScreen user={user} /> : <LoginPrompt />}
+          </div>
+        } />
+      </Routes>
+    </Router>
   );
 }
 
