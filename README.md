@@ -1,6 +1,6 @@
 # Venue App Monorepo
 
-A modern React monorepo for a venue application with marketing page, user authentication, and game functionality.
+A modern React monorepo for a venue application with marketing page and user authentication.
 
 ## Project Structure
 
@@ -8,8 +8,7 @@ A modern React monorepo for a venue application with marketing page, user authen
 testing/
 ├── apps/
 │   ├── marketing/     # Public marketing website (port 5173)
-│   ├── dash/          # User dashboard & authentication app (dash.localhost:5173)
-│   └── game/          # Single-player game app (game.localhost:5173)
+│   └── dash/          # User dashboard & authentication app (dash.localhost:5173)
 ├── packages/
 │   ├── shared/        # Shared UI components, utilities, types
 │   └── firebase/      # Firebase configuration and utilities
@@ -55,7 +54,6 @@ npm install
 # Run all apps
 npm run dev:marketing  # Marketing site on http://localhost:5173
 npm run dev:dash       # Dashboard app on http://dash.localhost:5173
-npm run dev:game       # Game app on http://game.localhost:5173
 
 # Or run them individually in separate terminals
 ```
@@ -67,7 +65,6 @@ npm run dev:game       # Game app on http://game.localhost:5173
 ```bash
 npm run dev:marketing    # Marketing website
 npm run dev:dash         # Dashboard & authentication app
-npm run dev:game         # Game app
 ```
 
 ### Building for Production
@@ -76,7 +73,6 @@ npm run dev:game         # Game app
 npm run build:all        # Build all apps
 npm run build:marketing  # Build marketing app only
 npm run build:dash       # Build dashboard app only
-npm run build:game       # Build game app only
 ```
 
 ### Code Quality
@@ -104,7 +100,6 @@ This project is configured for deployment on Vercel:
 The apps will be available at:
 - Marketing: `https://yourdomain.com`
 - Dashboard: `https://dash.yourdomain.com`
-- Game: `https://game.yourdomain.com`
 
 ## Shared Packages
 
@@ -122,13 +117,10 @@ Contains:
 - Firebase configuration
 - Authentication helpers (signUp, signIn, logOut, etc.)
 - Firestore utilities (CRUD operations)
-- Game score management
 
 ## Future Enhancements
 
-- Mobile app using React Native (game logic is separated for easy porting)
-- Real-time multiplayer features
-- More game types
+- Mobile app using React Native
 - User profiles and achievements
 - Social features
 

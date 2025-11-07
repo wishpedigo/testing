@@ -108,7 +108,6 @@ function Navigation() {
 - `fullWidth`: boolean
 - `color`: 'primary' | 'secondary' | 'inherit'
 - `type`: 'button' | 'submit' | 'reset'
-- `sx`: object (for custom styles like fontSize, padding, minHeight, minWidth)
 
 ### Typography
 - `variant`: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'body1' | 'body2' | 'caption'
@@ -116,7 +115,6 @@ function Navigation() {
 - `gutterBottom`: boolean
 - `paragraph`: boolean
 - `component`: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span' | 'div'
-- `sx`: object (for custom styles like flexGrow, display, alignItems, gap)
 
 ### Container
 - `maxWidth`: 'sm' | 'md' | 'lg' | 'xl' | 'false'
@@ -140,29 +138,22 @@ function Navigation() {
 - `autoComplete`: string
 
 ### Box
-- `sx`: object (for custom styles like display, alignItems, gap)
 
 ### AppBar
 - `position`: 'fixed' | 'static' | 'sticky'
-- `sx`: object (for custom styles like bgcolor)
 
 ### Alert
 - `severity`: 'error' | 'warning' | 'info' | 'success'
 - `onClose`: function
 
-## SX Prop Usage
+## Custom Styling with className
 
-The `sx` prop allows you to apply custom styles to components, similar to MUI's sx prop:
+Use the `className` prop to apply custom Tailwind CSS classes to components:
 
 ```typescript
 // Button with custom styles
 <Button 
-  sx={{
-    fontSize: '2rem',
-    padding: '2rem 4rem',
-    minHeight: '150px',
-    minWidth: '300px'
-  }}
+  className="text-3xl py-8 px-16 min-h-[150px] min-w-[300px]"
 >
   Custom Button
 </Button>
@@ -170,13 +161,13 @@ The `sx` prop allows you to apply custom styles to components, similar to MUI's 
 // Typography with flexbox styles
 <Typography 
   variant="h6" 
-  sx={{ flexGrow: 1 }}
+  className="flex-1"
 >
   Title
 </Typography>
 
 // Box with flex layout
-<Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+<Box className="flex items-center gap-2">
   Content
 </Box>
 ```

@@ -9,7 +9,6 @@ import {
   query,
   where,
   orderBy,
-  limit,
   DocumentData,
   QueryConstraint,
 } from 'firebase/firestore';
@@ -59,35 +58,54 @@ export const queryDocuments = async (
   return querySnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
 };
 
-// Game-specific helpers
+// User management functions
 
-export const saveGameScore = async (
-  userId: string,
-  score: number,
-  level?: number
-): Promise<void> => {
-  await createDocument('scores', `${userId}_${Date.now()}`, {
-    userId,
-    score,
-    level,
-    timestamp: new Date(),
+export interface UserProfile {
+  uid: string;
+  email: string;
+  displayName?: string;
+  firstName?: string;
+  lastName?: string;
+  avatar?: string;
+  bio?: string;
+  joinDate?: Date;
+  level?: string;
+  role?: 'admin' | 'user';
+  isActive?: boolean;
+  createdAt: Date;
+  updatedAt?: Date;
+  lastSignIn?: Date;
+}
+
+export const createUserProfile = async (userProfile: UserProfile): Promise<void> => {
+  await createDocument('users', userProfile.uid, {
+    ...userProfile,
+    createdAt: userProfile.createdAt,
+    lastSignIn: userProfile.lastSignIn,
   });
 };
 
-export const getUserScores = async (userId: string): Promise<DocumentData[]> => {
-  return queryDocuments(
-    'scores',
-    where('userId', '==', userId),
-    orderBy('score', 'desc'),
-    limit(10)
-  );
+export const updateUserProfile = async (
+  uid: string,
+  updates: Partial<UserProfile>
+): Promise<void> => {
+  await updateDocument('users', uid, updates);
 };
 
-export const getTopScores = async (limitCount = 10): Promise<DocumentData[]> => {
-  return queryDocuments(
-    'scores',
-    orderBy('score', 'desc'),
-    limit(limitCount)
-  );
+export const getUserProfile = async (uid: string): Promise<UserProfile | null> => {
+  const profile = await getDocument('users', uid);
+  return profile as UserProfile | null;
+};
+
+export const getAllUserProfiles = async (): Promise<UserProfile[]> => {
+  return queryDocuments('users', orderBy('createdAt', 'desc')) as Promise<UserProfile[]>;
+};
+
+export const getUsersByRole = async (role: 'admin' | 'user'): Promise<UserProfile[]> => {
+  return queryDocuments('users', where('role', '==', role)) as Promise<UserProfile[]>;
+};
+
+export const getActiveUsers = async (): Promise<UserProfile[]> => {
+  return queryDocuments('users', where('isActive', '==', true)) as Promise<UserProfile[]>;
 };
 

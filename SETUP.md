@@ -50,13 +50,10 @@ Run each app in a separate terminal:
 npm run dev:marketing
 # Opens on http://localhost:5173
 
-# Terminal 2 - Login/Auth app
-npm run dev:login
-# Opens on http://localhost:5174
+# Terminal 2 - Dashboard app
+npm run dev:dash
+# Opens on http://dash.localhost:5173
 
-# Terminal 3 - Game app
-npm run dev:game
-# Opens on http://localhost:5175
 ```
 
 ## Project Structure
@@ -65,8 +62,7 @@ npm run dev:game
 testing/
 ├── apps/
 │   ├── marketing/     # Marketing website - Port 5173
-│   ├── login/         # Authentication app - Port 5174
-│   └── game/          # Game app - Port 5175
+│   └── dash/          # Dashboard & Authentication app - dash.localhost:5173
 ├── packages/
 │   ├── shared/        # Shared UI components (Custom + Tailwind)
 │   └── firebase/      # Firebase utilities
@@ -82,51 +78,28 @@ testing/
 - Navigation with links to login app
 - Responsive design with custom components + Tailwind
 
-### Login App (Port 5174)
+### Dashboard App (dash.localhost:5173)
 - User registration (sign up)
 - User login (sign in)
 - Password reset functionality
 - Protected routes
 - User dashboard with profile info
-- Link to game app
-
-### Game App (Port 5175)
-- Simple click & score game (10 seconds)
-- User authentication check
-- Score tracking with Firebase
-- Personal best scores
-- Global leaderboard
-- Real-time score updates
 
 ### Shared Packages
 - **@venue/shared**: Reusable UI components, theme, utilities, types
-- **@venue/firebase**: Firebase auth, Firestore operations, score management
+- **@venue/firebase**: Firebase auth, Firestore operations
 
 ## User Flow
 
 1. User visits marketing site (localhost:5173)
-2. Clicks "Login" → Goes to login app (localhost:5174)
+2. Clicks "Login" → Goes to dashboard app (dash.localhost:5173)
 3. Signs up or logs in
-4. From dashboard, clicks "Launch Game" → Goes to game app (localhost:5175)
-5. Plays game, scores are saved to Firebase
-6. Can view leaderboards and personal stats
+4. Accesses dashboard with profile info
 
 ## Next Steps
 
 ### Firebase Setup
-Make sure to configure Firebase Security Rules for Firestore:
-
-```javascript
-rules_version = '2';
-service cloud.firestore {
-  match /databases/{database}/documents {
-    match /scores/{scoreId} {
-      allow read: if true;
-      allow write: if request.auth != null && request.resource.data.userId == request.auth.uid;
-    }
-  }
-}
-```
+Make sure to configure Firebase Security Rules for Firestore based on your data model.
 
 ### Production Deployment
 
@@ -137,11 +110,9 @@ service cloud.firestore {
 
 ### Future Enhancements
 
-- Mobile app (React Native) - game logic is already separated for easy porting
-- More game types
+- Mobile app (React Native)
 - User achievements system
 - Social features
-- Real-time multiplayer
 
 ## Troubleshooting
 
@@ -170,13 +141,11 @@ npm run build:all
 ```bash
 # Development
 npm run dev:marketing    # Start marketing app
-npm run dev:login        # Start login app
-npm run dev:game         # Start game app
+npm run dev:dash         # Start dashboard app
 
 # Building
 npm run build:marketing  # Build marketing app
-npm run build:login      # Build login app
-npm run build:game       # Build game app
+npm run build:dash       # Build dashboard app
 npm run build:all        # Build all apps
 
 # Code Quality

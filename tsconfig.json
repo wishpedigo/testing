@@ -31,8 +31,7 @@
     { "path": "./packages/shared" },
     { "path": "./packages/firebase" },
     { "path": "./apps/marketing" },
-    { "path": "./apps/login" },
-    { "path": "./apps/game" }
+    { "path": "./apps/dash" }
   ]
 }
 

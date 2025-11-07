@@ -23,7 +23,7 @@ const DashboardPage = ({ user }: DashboardPageProps) => {
     <>
       <AppBar position="static">
         <Toolbar>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          <Typography variant="h6" component="div" className="flex-1">
             Dashboard
           </Typography>
           <Button color="inherit" onClick={handleLogout}>
@@ -42,15 +42,6 @@ const DashboardPage = ({ user }: DashboardPageProps) => {
               <Typography paragraph color="text.secondary">
                 Email: {user?.email}
               </Typography>
-              <Button 
-                variant="contained" 
-                size="large" 
-                color="primary"
-                onClick={() => window.location.href = import.meta.env.VITE_GAME_URL || 'http://game.localhost:5173'}
-                sx={{ mt: 2 }}
-              >
-                🎮 Play Game
-              </Button>
             </Card>
           </Grid>
         </Grid>

@@ -5,8 +5,7 @@ This project is configured to use subdomains instead of different ports for a cl
 ## 🏗️ Architecture
 
 - **Marketing App**: `localhost:5173` (dev) → `yourdomain.com` (prod)
-- **Dashboard App**: `dash.localhost:5173` (dev) → `dash.yourdomain.com` (prod)  
-- **Game App**: `game.localhost:5173` (dev) → `game.yourdomain.com` (prod)
+- **Dashboard App**: `dash.localhost:5173` (dev) → `dash.yourdomain.com` (prod)
 
 ## 🚀 Quick Start
 
@@ -33,10 +32,6 @@ npm run dev:marketing
 # Dashboard app
 npm run dev:dash  
 # → http://dash.localhost:5173
-
-# Game app
-npm run dev:game
-# → http://game.localhost:5173
 ```
 
 ## 🌐 Production Deployment
@@ -53,10 +48,6 @@ npm run deploy:marketing
 # Deploy dashboard app  
 npm run deploy:dash
 # Configure domain: dash.yourdomain.com
-
-# Deploy game app
-npm run deploy:game
-# Configure domain: game.yourdomain.com
 ```
 
 ### Option 2: Single Vercel Project
@@ -69,7 +60,7 @@ If you prefer a single deployment, you can use the main `vercel.json` which rout
 
 Each app's `vite.config.ts` is configured with:
 - `envDir: resolve(__dirname, '../..')` - Points to project root for `.env` file
-- `host: 'dash.localhost'` or `host: 'game.localhost'` - Sets up local subdomain
+- `host: 'dash.localhost'` (for dash app) - Sets up local subdomain
 - `port: 5173` - Same port for all apps (different subdomains)
 
 ### Environment Variables
@@ -85,8 +76,7 @@ VITE_FIREBASE_AUTH_DOMAIN=your_project.firebaseapp.com
 
 Each app has its own `vercel.json` for independent deployment:
 - `apps/marketing/vercel.json`
-- `apps/dash/vercel.json` 
-- `apps/game/vercel.json`
+- `apps/dash/vercel.json`
 
 ## 🛠️ Development Workflow
 
@@ -99,12 +89,11 @@ Each app has its own `vercel.json` for independent deployment:
 
 ### Local Subdomains Not Working
 
-If `dash.localhost` or `game.localhost` don't work:
+If `dash.localhost` doesn't work:
 
-1. Check `/etc/hosts` has the entries:
+1. Check `/etc/hosts` has the entry:
    ```
    127.0.0.1 dash.localhost
-   127.0.0.1 game.localhost
    ```
 
 2. Run the setup script again:
@@ -118,8 +107,7 @@ If `dash.localhost` or `game.localhost` don't work:
 
 All apps use port 5173 but with different hosts:
 - `localhost:5173` → Marketing
-- `dash.localhost:5173` → Dashboard  
-- `game.localhost:5173` → Game
+- `dash.localhost:5173` → Dashboard
 
 If you get port conflicts, make sure only one app is running per subdomain.
 
@@ -138,12 +126,9 @@ Make sure the `.env` file is in the project root and contains all required `VITE
 │   ├── marketing/
 │   │   ├── vercel.json          # Marketing app deployment config
 │   │   └── vite.config.ts       # Vite config with localhost host
-│   ├── dash/
-│   │   ├── vercel.json          # Dashboard app deployment config  
-│   │   └── vite.config.ts       # Vite config with dash.localhost host
-│   └── game/
-│       ├── vercel.json          # Game app deployment config
-│       └── vite.config.ts       # Vite config with game.localhost host
+│   └── dash/
+│       ├── vercel.json          # Dashboard app deployment config  
+│       └── vite.config.ts       # Vite config with dash.localhost host
 └── packages/
     └── firebase/                 # Shared Firebase configuration
 ```

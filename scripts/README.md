@@ -14,6 +14,7 @@ This directory contains scripts to populate your Firebase database with test dat
 # From the project root
 npm run seed:users    # Creates 5 basic test users
 npm run seed:all      # Creates 8 users with comprehensive test data
+npm run empty:worlds  # Empties all world data from MongoDB
 ```
 
 ## 📊 What Gets Created
@@ -29,6 +30,13 @@ npm run seed:all      # Creates 8 users with comprehensive test data
 - **Leaderboard entries** ranked by performance
 - **Game statistics** and analytics data
 - **Multiple game modes** (classic, speed, endurance, precision)
+
+### Empty Worlds Script (`empty-worlds.js`)
+- **Deletes all world data** from MongoDB
+- **Removes worlds, towns, citizens, and buildings**
+- **Safe deletion order** respecting foreign key relationships
+- **Detailed logging** of what was deleted
+- **Confirmation counts** before and after deletion
 
 ## 🔑 Test User Credentials
 

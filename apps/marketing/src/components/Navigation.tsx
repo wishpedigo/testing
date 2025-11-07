@@ -7,7 +7,7 @@ const Navigation = () => {
     <AppBar position="static">
       <Container maxWidth="lg">
         <Toolbar>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          <Typography variant="h6" component="div" className="flex-1">
             Our Venue
           </Typography>
           <Link to="/" style={{ textDecoration: 'none', marginRight: '16px' }}>

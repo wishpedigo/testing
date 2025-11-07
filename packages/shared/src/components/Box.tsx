@@ -4,26 +4,12 @@ interface BoxProps {
   children?: React.ReactNode;
   className?: string;
   onClick?: () => void;
-  sx?: { [key: string]: any };
+  style?: React.CSSProperties;
 }
 
-const Box: React.FC<BoxProps> = ({ children, className = '', onClick, sx = {} }) => {
-  // Handle sx prop styles
-  const sxClasses = [];
-  if (sx.display === 'flex') {
-    sxClasses.push('flex');
-  }
-  if (sx.alignItems === 'center') {
-    sxClasses.push('items-center');
-  }
-  if (sx.gap) {
-    sxClasses.push(`gap-${sx.gap}`);
-  }
-
-  const classes = `${sxClasses.join(' ')} ${className}`;
-
+const Box: React.FC<BoxProps> = ({ children, className = '', onClick, style }) => {
   return (
-    <div className={classes} onClick={onClick}>
+    <div className={className} onClick={onClick} style={style}>
       {children}
     </div>
   );

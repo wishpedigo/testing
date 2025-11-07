@@ -26,8 +26,8 @@ const AboutPage = () => {
             What We Offer
           </Typography>
           <Typography paragraph color="text.secondary">
-            From interactive games to social experiences, we offer a wide range of
-            activities designed to bring people together and create lasting memories.
+            From interactive experiences to social activities, we offer a wide range of
+            services designed to bring people together and create lasting memories.
             Join our community today and discover everything we have to offer!
           </Typography>
         </Card>

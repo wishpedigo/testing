@@ -54,46 +54,30 @@ npm run dev:dash
 ```
 Visit: http://dash.localhost:5173
 
-**Terminal 3 - Game App:**
-```bash
-npm run dev:game
-```
-Visit: http://localhost:5175
 
 ### Step 4: Test the Flow
 
 1. Open http://localhost:5173 (Marketing site)
 2. Click "Login" or "Get Started"
 3. Create a new account on the sign-up page
-4. After login, click "Launch Game"
-5. Play the game and watch your scores get saved!
+4. Access your dashboard after login
 
 ## 📁 What You Got
 
 - ✅ **Marketing App** - Beautiful landing page with custom components + Tailwind
 - ✅ **Dashboard App** - Full authentication (signup, login, password reset)
-- ✅ **Game App** - Click & score game with leaderboards
 - ✅ **Shared Components** - Reusable UI components across all apps
 - ✅ **Firebase Integration** - Auth + Database ready to go
 - ✅ **TypeScript** - Full type safety
 - ✅ **Monorepo** - Clean architecture with npm workspaces
 - ✅ **Vercel Ready** - Deploy configuration included
 
-## 🎮 How the Game Works
-
-- 10-second clicking challenge
-- Scores automatically saved to Firebase
-- View your best scores
-- Compete on the global leaderboard
-- Must be logged in to play
-
 ## 🔧 Common Commands
 
 ```bash
-# Start all apps (need 3 terminals)
+# Start all apps (need 2 terminals)
 npm run dev:marketing
 npm run dev:dash
-npm run dev:game
 
 # Build for production
 npm run build:all
@@ -115,10 +99,8 @@ npm run format
 
 ## 💡 Tips
 
-- The apps link to each other (marketing → login → game)
+- The apps link to each other (marketing → login → dashboard)
 - All apps share the same Firebase project
-- Scores persist across sessions
-- Game logic is separated for future React Native mobile app
 
 ## 🆘 Need Help?
 

@@ -10,7 +10,6 @@ interface ButtonProps {
   className?: string;
   color?: 'primary' | 'secondary' | 'inherit';
   fullWidth?: boolean;
-  sx?: { [key: string]: any };
 }
 
 const Button: React.FC<ButtonProps> = ({ 
@@ -22,8 +21,7 @@ const Button: React.FC<ButtonProps> = ({
   type = 'button',
   className = '',
   color = 'primary',
-  fullWidth = false,
-  sx = {}
+  fullWidth = false
 }) => {
   const baseClasses = 'font-mono font-medium transition-all duration-200 focus:outline-none disabled:cursor-not-allowed relative';
   
@@ -47,26 +45,12 @@ const Button: React.FC<ButtonProps> = ({
     large: 'px-6 py-3 text-lg'
   };
   
-  // Handle sx prop styles and button background
-  const sxStyles: React.CSSProperties = {};
-  if (sx.fontSize) {
-    sxStyles.fontSize = sx.fontSize;
-  }
-  if (sx.padding) {
-    sxStyles.padding = sx.padding;
-  }
-  if (sx.minHeight) {
-    sxStyles.minHeight = sx.minHeight;
-  }
-  if (sx.minWidth) {
-    sxStyles.minWidth = sx.minWidth;
-  }
-  
   // Add grey background for primary/secondary buttons
+  const buttonStyles: React.CSSProperties = {};
   if (actualVariant === 'primary' && color !== 'inherit') {
-    sxStyles.backgroundColor = '#AAA'; // bg-secondary grey
+    buttonStyles.backgroundColor = '#AAA'; // bg-secondary grey
   } else if (actualVariant === 'secondary' && color !== 'inherit') {
-    sxStyles.backgroundColor = '#AAA'; // bg-secondary grey
+    buttonStyles.backgroundColor = '#AAA'; // bg-secondary grey
   }
 
   // Add classic raised button shadow effect
@@ -78,7 +62,7 @@ const Button: React.FC<ButtonProps> = ({
     <button
       type={type}
       className={classes}
-      style={sxStyles}
+      style={buttonStyles}
       disabled={disabled}
       onClick={onClick}
     >

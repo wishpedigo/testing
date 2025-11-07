@@ -8,7 +8,6 @@ interface TypographyProps {
   color?: 'primary' | 'secondary' | 'textPrimary' | 'textSecondary' | 'text.primary' | 'text.secondary';
   gutterBottom?: boolean;
   paragraph?: boolean;
-  sx?: { [key: string]: any };
 }
 
 const Typography: React.FC<TypographyProps> = ({ 
@@ -18,8 +17,7 @@ const Typography: React.FC<TypographyProps> = ({
   className = '',
   color = 'textPrimary',
   gutterBottom = false,
-  paragraph = false,
-  sx = {}
+  paragraph = false
 }) => {
   // Map typography variants to Tailwind classes with pixel fonts for headings
   const variantClasses = {
@@ -60,22 +58,7 @@ const Typography: React.FC<TypographyProps> = ({
     }
   }
 
-  // Handle sx prop styles
-  const sxClasses = [];
-  if (sx.flexGrow) {
-    sxClasses.push('flex-1');
-  }
-  if (sx.display === 'flex') {
-    sxClasses.push('flex');
-  }
-  if (sx.alignItems === 'center') {
-    sxClasses.push('items-center');
-  }
-  if (sx.gap) {
-    sxClasses.push(`gap-${sx.gap}`);
-  }
-
-  const classes = `${variantClasses[variant]} ${colorClasses[color]} ${gutterBottom ? 'mb-4' : ''} ${paragraph ? 'mb-4' : ''} ${sxClasses.join(' ')} ${className}`;
+  const classes = `${variantClasses[variant]} ${colorClasses[color]} ${gutterBottom ? 'mb-4' : ''} ${paragraph ? 'mb-4' : ''} ${className}`;
 
   return React.createElement(Component, { className: classes }, children);
 };

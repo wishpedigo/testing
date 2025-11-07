@@ -6,7 +6,6 @@ interface AvatarProps {
   children?: React.ReactNode;
   size?: 'small' | 'medium' | 'large';
   className?: string;
-  sx?: { [key: string]: any };
 }
 
 const Avatar: React.FC<AvatarProps> = ({
@@ -14,8 +13,7 @@ const Avatar: React.FC<AvatarProps> = ({
   alt = '',
   children,
   size = 'medium',
-  className = '',
-  sx = {}
+  className = ''
 }) => {
   const baseClasses = 'inline-flex items-center justify-center rounded-full bg-gray-300 text-gray-600 font-medium overflow-hidden';
   
@@ -27,11 +25,7 @@ const Avatar: React.FC<AvatarProps> = ({
 
   const classes = `${baseClasses} ${sizeClasses[size]} ${className}`;
 
-  const style: React.CSSProperties = {
-    width: sx.width,
-    height: sx.height,
-    ...sx
-  };
+  const style: React.CSSProperties = {};
 
   if (src) {
     return (

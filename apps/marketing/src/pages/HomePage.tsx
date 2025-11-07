@@ -12,7 +12,7 @@ const HomePage = () => {
           Experience entertainment like never before
         </Typography>
         <Box className="mt-8">
-          <a href="http://localhost:5174" style={{ textDecoration: 'none' }}>
+          <a href="http://dash.localhost:5173" style={{ textDecoration: 'none' }}>
             <Button variant="contained" size="large" color="primary">
               Get Started
             </Button>
@@ -25,20 +25,20 @@ const HomePage = () => {
         <Grid item xs={12} md={4}>
           <Card>
             <Typography variant="h5" gutterBottom>
-              🎮 Interactive Games
+              🎯 Interactive Experiences
             </Typography>
             <Typography color="text.secondary">
-              Play exciting single-player games and compete for high scores
+              Engage with exciting interactive features and activities
             </Typography>
           </Card>
         </Grid>
         <Grid item xs={12} md={4}>
           <Card>
             <Typography variant="h5" gutterBottom>
-              🏆 Leaderboards
+              👥 Community
             </Typography>
             <Typography color="text.secondary">
-              Track your progress and see how you rank against other players
+              Connect with others and be part of our growing community
             </Typography>
           </Card>
         </Grid>
@@ -48,7 +48,7 @@ const HomePage = () => {
               📱 Mobile Ready
             </Typography>
             <Typography color="text.secondary">
-              Coming soon - play on any device, anywhere, anytime
+              Access our platform on any device, anywhere, anytime
             </Typography>
           </Card>
         </Grid>

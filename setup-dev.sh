@@ -14,23 +14,14 @@ else
     echo "dash.localhost already exists in /etc/hosts"
 fi
 
-if ! grep -q "127.0.0.1 game.localhost" /etc/hosts; then
-    echo "127.0.0.1 game.localhost" | sudo tee -a /etc/hosts
-    echo "Added game.localhost to /etc/hosts"
-else
-    echo "game.localhost already exists in /etc/hosts"
-fi
-
 echo ""
 echo "✅ Setup complete!"
 echo ""
 echo "Now you can run:"
 echo "  npm run dev:marketing  # http://localhost:5173"
 echo "  npm run dev:dash       # http://dash.localhost:5173"
-echo "  npm run dev:game       # http://game.localhost:5173"
 echo ""
 echo "For production deployment:"
 echo "  Deploy each app separately to Vercel with custom domains:"
 echo "  - marketing: yourdomain.com"
 echo "  - dash: dash.yourdomain.com"
-echo "  - game: game.yourdomain.com"
