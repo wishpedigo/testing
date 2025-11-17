@@ -20,6 +20,10 @@ export { default as Avatar } from './components/Avatar';
 export { Menu, MenuItem as MenuItemComponent } from './components/Menu';
 export { default as CircularProgress } from './components/CircularProgress';
 export { default as LinearProgress } from './components/LinearProgress';
+export { default as SpiralCanvas } from './components/SpiralCanvas';
+export { default as FragmentShaderCanvas } from './components/FragmentShaderCanvas';
+export { default as FluidSimulation } from './components/FluidSimulation';
+export { default as FluidHero } from './components/FluidHero';
 
 // Theme
 export { theme } from './theme';

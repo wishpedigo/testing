@@ -20,7 +20,7 @@ const Slider: React.FC<SliderProps> = ({
   step = 1,
   disabled = false,
   className = '',
-  marks = false,
+  marks: _marks = false,
   valueLabelDisplay = 'off'
 }) => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {

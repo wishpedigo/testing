@@ -27,9 +27,9 @@ const Menu: React.FC<MenuProps> = ({
   children,
   anchorEl,
   open = false,
-  onClose,
+  onClose: _onClose,
   anchorOrigin = { vertical: 'top', horizontal: 'right' },
-  transformOrigin = { vertical: 'top', horizontal: 'right' },
+  transformOrigin: _transformOrigin = { vertical: 'top', horizontal: 'right' },
   className = ''
 }) => {
   if (!open || !anchorEl) return null;

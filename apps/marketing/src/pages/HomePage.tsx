@@ -1,23 +1,34 @@
-import { Container, Typography, Box, Grid, Button, Card } from '@wishlabs/shared';
+import { Container, Typography, Box, Grid, Button, Card, SpiralCanvas, FragmentShaderCanvas } from '@wishlabs/shared';
 
 const HomePage = () => {
   return (
-    <Container maxWidth="lg" className="py-12">
-      {/* Hero Section */}
-      <Box className="text-center mb-16">
-        <Typography variant="h2" component="h1" gutterBottom className="font-bold">
-          Welcome to Our Venue
-        </Typography>
-        <Typography variant="h5" color="text.secondary" paragraph>
-          Experience entertainment like never before
-        </Typography>
-        <Box className="mt-8">
-          <a href="http://dash.localhost:5173" style={{ textDecoration: 'none' }}>
-            <Button variant="contained" size="large" color="primary">
-              Get Started
-            </Button>
-          </a>
+    <>
+      {/* Fragment Shader Canvas Section - Full Width */}
+      <Box className="w-full mb-16">
+        <FragmentShaderCanvas height={150} className="shadow-lg" />
+      </Box>
+
+      <Container maxWidth="lg" className="py-12">
+        {/* Hero Section */}
+        <Box className="text-center mb-16">
+          <Typography variant="h2" component="h1" gutterBottom className="font-bold">
+            Welcome to Our Venue
+          </Typography>
+          <Typography variant="h5" color="text.secondary" paragraph>
+            Experience entertainment like never before
+          </Typography>
+          <Box className="mt-8">
+            <a href="http://dash.localhost:5173" style={{ textDecoration: 'none' }}>
+              <Button variant="contained" size="large" color="primary">
+                Get Started
+              </Button>
+            </a>
+          </Box>
         </Box>
+
+      {/* Spiral Canvas Section */}
+      <Box className="flex justify-center mb-16">
+        <SpiralCanvas width={800} height={600} className="rounded-lg shadow-lg" />
       </Box>
 
       {/* Features Section */}
@@ -53,7 +64,8 @@ const HomePage = () => {
           </Card>
         </Grid>
       </Grid>
-    </Container>
+      </Container>
+    </>
   );
 };
 
